@@ -31,12 +31,14 @@
       environment.systemPackages =
         [
           pkgs.mkalias
+	    pkgs.git
 	    pkgs.vim
           pkgs.neovim
 	    pkgs.tmux
-	    pkgs.alacritty
+	    pkgs.wezterm
 	    pkgs.fastfetch
 	    pkgs.logseq
+	    pkgs.yazi
         ];
 
       # Homebrew
@@ -63,6 +65,7 @@
 	# Fonts
 	fonts.packages = [
         pkgs.jetbrains-mono
+	  pkgs.meslo-lg
 	];
 
 	# Activation script for aliasing applications
@@ -88,9 +91,11 @@
 
       # Configure macOS system settings with Nix.
 	system.defaults = {
-        dock.autohide = true;
+        dock.autohide = false;
 	  finder.FXPreferredViewStyle = "clmv";
 	  NSGlobalDomain.AppleInterfaceStyle = "Dark";
+	  loginwindow.GuestEnabled = false;
+	  NSGlobalDomain.KeyRepeat = 2;
 	};
 
 	# Necessary for using flakes on this system.
