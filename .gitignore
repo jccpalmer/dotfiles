@@ -1,0 +1,15 @@
+# Ignored files and directories
+
+# Dotfiles directories
+filezilla/
+
+# Git files
+.git/HEAD
+.git/config
+.git/description
+
+# Git directories
+.git/hooks/
+.git/info/
+.git/objects/
+.git/refs/
