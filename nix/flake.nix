@@ -86,7 +86,14 @@
          done
              '';
 
-      # Necessary for using flakes on this system.
+      # Configure macOS system settings with Nix.
+	system.defaults = {
+        dock.autohide = true;
+	  finder.FXPreferredViewStyle = "clmv";
+	  NSGlobalDomain.AppleInterfaceStyle = "Dark";
+	};
+
+	# Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
       # Enable alternative shell support in nix-darwin.
