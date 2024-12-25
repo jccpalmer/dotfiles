@@ -2,6 +2,7 @@
 
 # Dotfiles directories
 filezilla/
+linearmouse/
 
 # Git files
 .git/HEAD
