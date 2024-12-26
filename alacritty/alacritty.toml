@@ -2,14 +2,14 @@
 
 [general]
 import = [
-     "~/.config/alacritty/themes/theme/nord.toml"
+     "~/.config/alacritty/themes/alacritty-theme/themes/nord.toml"
 ]
 
 [window]
 opacity = 0.75
 blur = true
 dynamic_title = true
-padding = { x =3, y = 0 }
+padding = { x = 3, y = 0 }
 dynamic_padding = true
 
 [cursor]
