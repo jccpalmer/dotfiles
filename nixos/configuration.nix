@@ -124,6 +124,7 @@
     pkgs.lutris
     pkgs.gamescope
     pkgs.gamemode
+    pkgs.alacritty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
