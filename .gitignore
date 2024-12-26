@@ -1,0 +1,18 @@
+# Git .gitignore file
+
+# Directories
+
+# Git directories
+branches/
+hooks/
+info/
+logs/
+objects/
+refs/
+
+# Git files
+COMMIT_EDITMSG
+config
+description
+HEAD
+index
