@@ -4,6 +4,7 @@
 import = [ "~/.config/alacritty/themes/nord.toml" ]
 
 [window]
+dimensions = { columns = 0, lines = 0 }
 opacity = 0.7
 blur = true
 dynamic_title = true
@@ -44,6 +45,7 @@ bindings = [
 	 { key = "Equals", mods = "Command", action = "IncreaseFontSize" },
 	 { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
 	 { key = "Minus", mods = "Command|Shift", action = "ResetFontSize" },
+	 #{ key = "Minus", mods = "Command|Shift", action = "ResetFontSize" },
 	 #{ key = "PageUp", mods = "Shift", chars = "\\x1b[5;2~" },
 	 #{ key = "PageUp", mods = "Control", chars = "\\x1b[5;5~" },
 	 #{ key = "PageUp", chars = "\\x1b[5~" },
