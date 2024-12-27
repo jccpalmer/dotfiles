@@ -49,5 +49,6 @@ user-dirs.dirs
 user-dirs.locale
 xdg-desktop-portal-kderc
 
-# Git directories
+# Git
 .git/
+.gitignore
