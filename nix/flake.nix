@@ -1,5 +1,5 @@
 {
-  description = "Default nix-darwin system flake";
+  description = "Nix-Darwin configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -49,6 +49,7 @@
 	  ];
 	  casks = [
 	    "whisky"
+	    "heroic"
 	  ];
 	  masApps = {
 	    "Home Assistant" = 1099568401;
@@ -114,7 +115,11 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+	# Allow unsupported packages
+	nixpkgs.config.allowUnsupportedSystem = true;
     };
+
   in
   {
     # Build darwin flake using:
