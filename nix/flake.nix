@@ -35,7 +35,6 @@
 	    pkgs.vim
           pkgs.neovim
 	    pkgs.tmux
-	    pkgs.wezterm
 	    pkgs.fastfetch
 	    pkgs.logseq
 	    pkgs.yazi

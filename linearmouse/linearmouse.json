@@ -1,0 +1,39 @@
+{
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "productName" : "MX Master 3 Mac",
+          "vendorID" : "0x46d",
+          "productID" : "0xb023",
+          "category" : "mouse",
+          "serialNumber" : "6314900DC10F782C"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      },
+      "buttons" : {
+        "universalBackForward" : true
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "vendorID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "category" : "trackpad",
+          "productID" : "0x0"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : false
+        }
+      }
+    }
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+}
