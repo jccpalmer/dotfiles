@@ -31,6 +31,7 @@
       environment.systemPackages =
         [
           pkgs.mkalias
+	    pkgs.alacritty
 	    pkgs.git
 	    pkgs.vim
           pkgs.neovim
