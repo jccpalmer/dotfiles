@@ -21,7 +21,7 @@
     # User package management
     home.packages = with pkgs; [
       
-    # Archival tools
+      # Archival tools
       zip
       xz
       unzip
@@ -61,6 +61,7 @@
 
       # Productivity
       libreoffice-fresh
+	bitwarden
       logseq
       hugo
       glow
@@ -86,11 +87,12 @@
       usbutils
       kdePackages.kwalletmanager
       kdePackages.kwallet-pam
+	pinentry-all
 
       # Gaming
       steam
       lutris
-      heroic
+      #heroic
       protonup-qt
       protontricks
       discord
@@ -100,6 +102,10 @@
       # WINE
       wine
       winetricks
+
+	# Photos
+	gimp
+	darktable
 
       # ZSH settings
       oh-my-zsh
@@ -139,6 +145,8 @@
       defaultCacheTtl = 1800;
       enableSshSupport = true;
     };
+
+    
 
     services.protonmail-bridge = {
       enable = true;

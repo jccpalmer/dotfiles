@@ -4,7 +4,7 @@
 import = [ "~/.config/alacritty/themes/nord.toml" ]
 
 [window]
-dimensions = { columns = 0, lines = 0 }
+dimensions = { columns = 122, lines = 32 }
 opacity = 0.7
 blur = true
 dynamic_title = true

@@ -116,6 +116,7 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-28.3.3"
     "electron-27.3.11"
+    "electron-31.7.6"
   ];
 
   # List packages installed in system profile. To search, run:
@@ -127,6 +128,7 @@
     neovim
     alacritty
     zsh
+    pass
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

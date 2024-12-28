@@ -50,7 +50,7 @@ in {
 	};
 
 	Service = {
-        Restart = "always";
+        Restart = "on-failure";
 	  ExecStart = "${cfg.package}/bin/protonmail-bridge --no-interactive --log-level ${cfg.logLevel}";
 	};
 
