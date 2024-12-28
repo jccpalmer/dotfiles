@@ -37,7 +37,7 @@
       nmap
       ipcalc
 
-      #Utilities
+      # Utilities
       fastfetch
       nnn
       ripgrep
