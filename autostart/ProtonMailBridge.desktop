@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=ProtonMailBridge
-Exec="/nix/store/7hn381pgg1zsv6l57pvwlfqb5px4z1g1-protonmail-bridge-3.15.1/bin/protonmail-bridge" "--no-window"
-X-GNOME-Autostart-enabled=true
