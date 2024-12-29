@@ -59,6 +59,9 @@
       # Nix
       nix-output-monitor
 
+	# Emacs
+	emacs
+
       # Productivity
       libreoffice-fresh
 	bitwarden
@@ -67,6 +70,7 @@
       glow
       protonmail-bridge
       mullvad-vpn
+	nextcloud-client
 
       # Browser
       brave
@@ -87,7 +91,7 @@
       usbutils
       kdePackages.kwalletmanager
       kdePackages.kwallet-pam
-	pinentry-all
+	pinentry-qt
 
       # Gaming
       steam
@@ -142,6 +146,7 @@
 
     services.gpg-agent = {
       enable = true;
+	pinentryPackage = pkgs.pinentry-qt;
       defaultCacheTtl = 1800;
       enableSshSupport = true;
     };

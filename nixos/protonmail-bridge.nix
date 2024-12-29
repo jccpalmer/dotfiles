@@ -14,7 +14,7 @@ in {
     services.protonmail-bridge = {
       enable = mkOption {
         type = types.bool;
-	  default = false;
+	  default = true;
 	  description = "Whether to enable the Bridge.";
 	};
 
@@ -51,7 +51,7 @@ in {
 
 	Service = {
         Restart = "on-failure";
-	  ExecStart = "${cfg.package}/bin/protonmail-bridge --no-interactive --log-level ${cfg.logLevel}";
+	  ExecStart = "${cfg.package}/bin/protonmail-bridge -n --log-level ${cfg.logLevel}";
 	};
 
 	Install = {

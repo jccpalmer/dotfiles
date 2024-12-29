@@ -1,0 +1,16 @@
+[2024-12-28 20:37:37.458] [info]  No state version found, assuming empty state.
+[2024-12-28 20:37:37.570] [info]  Disabling coredumps in main process
+[2024-12-28 20:37:41.735] [info]  State version: 68
+[2024-12-28 20:37:41.812] [info]  Retrieving application id
+[2024-12-28 20:37:51.158] [info]  Retrieving application id
+[2024-12-28 20:37:59.467] [info]  Retrieving application id
+[2024-12-28 20:38:04.952] [info]  Retrieving application id
+[2024-12-28 20:38:05.303] [info]  Error: No password found
+[2024-12-28 20:38:05.453] [error] Error: WebSocket failed to connect. The connection could not be found on the server, either the endpoint may not be a SignalR endpoint, the connection ID is not present on the server, or there is a proxy blocking WebSockets. If you have multiple servers check that sticky sessions are enabled.
+[2024-12-28 20:38:05.684] [info]  Finished search indexing
+[2024-12-28 20:38:05.736] [info]  Starting decryption using multithreading
+[2024-12-28 20:38:05.944] [info]  Finished search indexing
+[2024-12-28 20:40:40.841] [error] Error: WebSocket failed to connect. The connection could not be found on the server, either the endpoint may not be a SignalR endpoint, the connection ID is not present on the server, or there is a proxy blocking WebSockets. If you have multiple servers check that sticky sessions are enabled.
+[2024-12-28 20:45:29.949] [error] Error: WebSocket failed to connect. The connection could not be found on the server, either the endpoint may not be a SignalR endpoint, the connection ID is not present on the server, or there is a proxy blocking WebSockets. If you have multiple servers check that sticky sessions are enabled.
+[2024-12-28 20:47:48.513] [error] Error: WebSocket failed to connect. The connection could not be found on the server, either the endpoint may not be a SignalR endpoint, the connection ID is not present on the server, or there is a proxy blocking WebSockets. If you have multiple servers check that sticky sessions are enabled.
+[2024-12-28 20:52:18.033] [error] Error: WebSocket failed to connect. The connection could not be found on the server, either the endpoint may not be a SignalR endpoint, the connection ID is not present on the server, or there is a proxy blocking WebSockets. If you have multiple servers check that sticky sessions are enabled.

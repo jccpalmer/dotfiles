@@ -156,6 +156,9 @@
   programs.neovim.defaultEditor = true;
   environment.variables.EDITOR = "neovim";
 
+  # Enable GCR.
+  services.dbus.packages = [ pkgs.gcr ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
