@@ -2,6 +2,7 @@
 
 # Directories
 akonadi/
+Bitwarden/
 BraveSoftware/
 dconf/
 environment.d/
@@ -10,13 +11,16 @@ fontconfig/
 git/
 gtk-3.0/
 gtk-4.0/
+ibus/
 KDE/
 kdedefaults/
 kde.org/
 libreoffice/
+linearmouse/
 Logseq/
 logseq/
 'Mullvad VPN'/
+Nextcloud/
 nixos.bak/
 protonmail/
 pulse/
@@ -26,6 +30,7 @@ xsettingsd/
 
 # Files
 baloofilerc
+dolphinrc
 gtkrc
 gtkrc-2.0
 kactivitymanagerdrc
@@ -36,10 +41,12 @@ kded5rc
 kded6rc
 kdeglobals
 kglobalshortcutsrc
+kiorc
 konsolerc
 konsolesshconfig
 ksmserverrc
 ktimezonedrc
+ktrashrc
 kwalletrc
 kwinoutputconfig.json
 kwinrc
@@ -48,6 +55,7 @@ plasma-localerc
 plasma-org.kde.plasma.desktop-appletsrc
 plasmashellrc
 powermanagementprofilesrc
+trashrc
 Trolltech.conf
 user-dirs.dirs
 user-dirs.locale

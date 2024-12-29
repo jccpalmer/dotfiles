@@ -3119,3 +3119,263 @@
 2024-12-28 21:20:41:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "b790af7a-8c76-4e08-a059-4f37e6592a35"
 2024-12-28 21:20:41:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
 2024-12-28 21:20:41:810 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:20:41:811 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:21:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:21:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:21:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:21:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:21:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5723 s)
+2024-12-28 21:21:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "7a178134-0938-4f2e-984b-abc694695378"
+2024-12-28 21:21:11:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:21:11:813 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:21:11:813 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:21:31:623 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "2c83d8e4-a19b-479f-ad44-23fd1c88cf12"
+2024-12-28 21:21:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:21:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "4fe64aa5-9009-4c06-aaad-64972f37ed09"
+2024-12-28 21:21:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:21:31:715 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:21:31:715 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:21:31:749 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:21:31:749 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:21:31:749 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:21:41:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
+2024-12-28 21:21:41:625 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "6f045ad1-f0de-460e-8c42-e42c00925769"
+2024-12-28 21:21:41:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::PropfindJob created for "https://nextcloud.xana.live" + "/" "OCC::ConnectionValidator"
+2024-12-28 21:21:41:625 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:589 ]:	Skipping server availability check for account "jordan" with state 2
+2024-12-28 21:21:41:625 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:21:41:625 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:21:41:625 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:21:41:625 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:21:41:625 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5753 s)
+2024-12-28 21:21:41:625 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "0e189e3f-2958-47b9-899f-959fd9b24fdb"
+2024-12-28 21:21:41:626 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:21:41:818 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:21:41:818 [ info nextcloud.sync.networkjob.propfind /build/source/src/libsync/networkjobs.cpp:658 ]:	PROPFIND of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:21:41:818 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:21:41:818 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:22:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:22:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:22:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:22:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:22:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5783 s)
+2024-12-28 21:22:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "51c40a54-b8c8-4eb3-8b8b-2cbb7d534bb7"
+2024-12-28 21:22:11:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:22:11:820 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:22:11:820 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:22:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "b588ab8e-fad5-4b2f-b8b7-cc67d6f565c5"
+2024-12-28 21:22:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:22:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "6b61e6fc-bcb4-4216-aa46-2c97dc689d3c"
+2024-12-28 21:22:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:22:31:789 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:22:31:789 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:22:31:789 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:22:31:789 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:22:31:790 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:22:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:22:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:22:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:22:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:22:41:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5813 s)
+2024-12-28 21:22:41:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "55d22a7c-97d7-4d3a-97c2-dacd404c1dc2"
+2024-12-28 21:22:41:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:22:41:823 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:22:41:823 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:22:43:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
+2024-12-28 21:22:43:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "a9f89ba3-b764-4e27-a2e4-48670a4da5cd"
+2024-12-28 21:22:43:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::PropfindJob created for "https://nextcloud.xana.live" + "/" "OCC::ConnectionValidator"
+2024-12-28 21:22:43:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:589 ]:	Skipping server availability check for account "jordan" with state 2
+2024-12-28 21:22:43:871 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:22:43:871 [ info nextcloud.sync.networkjob.propfind /build/source/src/libsync/networkjobs.cpp:658 ]:	PROPFIND of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:23:11:623 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:23:11:623 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:23:11:623 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:23:11:623 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:23:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5843 s)
+2024-12-28 21:23:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "be0d97ba-93ac-40c3-a50f-5af51456fb90"
+2024-12-28 21:23:11:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:23:12:135 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:23:12:135 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:23:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "b23be933-091c-418f-a839-9c6f4537f75f"
+2024-12-28 21:23:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:23:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "ecf6d6be-3a51-4d90-a6f3-57a05365dfee"
+2024-12-28 21:23:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:23:31:797 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:23:31:797 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:23:31:798 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:23:31:798 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:23:31:798 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:23:41:623 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:23:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:23:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:23:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:23:41:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5873 s)
+2024-12-28 21:23:41:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "54efef29-8517-4c27-9a23-1a25cd007c85"
+2024-12-28 21:23:41:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:23:41:829 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:23:41:830 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:23:45:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
+2024-12-28 21:23:45:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "ec1cdff7-c3bc-4eeb-a2a7-cdade3b8bc5a"
+2024-12-28 21:23:45:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::PropfindJob created for "https://nextcloud.xana.live" + "/" "OCC::ConnectionValidator"
+2024-12-28 21:23:45:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:589 ]:	Skipping server availability check for account "jordan" with state 2
+2024-12-28 21:23:45:823 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:23:45:823 [ info nextcloud.sync.networkjob.propfind /build/source/src/libsync/networkjobs.cpp:658 ]:	PROPFIND of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:24:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:24:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:24:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:24:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:24:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5903 s)
+2024-12-28 21:24:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "f38b6d28-8266-4cdf-a63f-d0edf4b987d1"
+2024-12-28 21:24:11:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:24:11:717 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:24:11:717 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:24:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "1f314cae-0e04-467b-a7cb-5784d3e9a518"
+2024-12-28 21:24:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:24:31:625 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "4a230c1b-821f-4719-ba68-f83c95d0e407"
+2024-12-28 21:24:31:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:24:31:786 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:24:31:786 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:24:31:786 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:24:31:924 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:24:31:924 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:24:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:24:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:24:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:24:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:24:41:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5933 s)
+2024-12-28 21:24:41:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "91633ece-f6f9-4db3-985c-e0f5e25c4e62"
+2024-12-28 21:24:41:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:24:41:839 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:24:41:839 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:24:47:623 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
+2024-12-28 21:24:47:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "180148be-fba1-40ed-9541-8757ea924767"
+2024-12-28 21:24:47:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::PropfindJob created for "https://nextcloud.xana.live" + "/" "OCC::ConnectionValidator"
+2024-12-28 21:24:47:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:589 ]:	Skipping server availability check for account "jordan" with state 2
+2024-12-28 21:24:47:775 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:24:47:775 [ info nextcloud.sync.networkjob.propfind /build/source/src/libsync/networkjobs.cpp:658 ]:	PROPFIND of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:25:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:25:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:25:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:25:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:25:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5963 s)
+2024-12-28 21:25:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "91fb91bc-923b-43cc-af29-a5eb6bb2deb1"
+2024-12-28 21:25:11:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:25:11:839 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:25:11:839 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:25:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "f3328f6e-2280-44e9-8062-3429fbf7bda0"
+2024-12-28 21:25:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:25:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "65055fea-4b82-4e5a-b3b3-cbce164229d3"
+2024-12-28 21:25:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:25:31:729 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:25:31:729 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:25:31:744 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:25:31:744 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:25:31:744 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:25:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:25:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:25:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:25:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:25:41:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 5993 s)
+2024-12-28 21:25:41:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "5110e427-4043-4f8b-9d77-c0cf4b0ef677"
+2024-12-28 21:25:41:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:25:41:846 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:25:41:846 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:25:49:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
+2024-12-28 21:25:49:625 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "bfcbdb2b-3e95-491c-8f94-9605ba1dbed0"
+2024-12-28 21:25:49:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::PropfindJob created for "https://nextcloud.xana.live" + "/" "OCC::ConnectionValidator"
+2024-12-28 21:25:49:625 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:589 ]:	Skipping server availability check for account "jordan" with state 2
+2024-12-28 21:25:49:831 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:25:49:831 [ info nextcloud.sync.networkjob.propfind /build/source/src/libsync/networkjobs.cpp:658 ]:	PROPFIND of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:26:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:26:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:26:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:26:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:26:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 6023 s)
+2024-12-28 21:26:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "5bbf1625-a57f-4d7d-938f-5d9e3defab42"
+2024-12-28 21:26:11:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:26:11:846 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:26:11:846 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:26:31:623 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "2d2d0628-e43a-4cc8-b2e5-3387b1c0bc05"
+2024-12-28 21:26:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:26:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "6e0f4b88-675a-47a5-b887-9380a7dbce93"
+2024-12-28 21:26:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:26:31:726 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:26:31:726 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:26:31:742 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:26:31:742 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:26:31:743 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:26:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:26:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:26:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:26:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:26:41:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 6053 s)
+2024-12-28 21:26:41:625 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "d8c6621b-cfb9-409f-a277-eb0232979f9e"
+2024-12-28 21:26:41:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:26:41:849 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:26:41:849 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:26:51:623 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
+2024-12-28 21:26:51:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "ec57ac02-8431-43b7-ab65-928650eded73"
+2024-12-28 21:26:51:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::PropfindJob created for "https://nextcloud.xana.live" + "/" "OCC::ConnectionValidator"
+2024-12-28 21:26:51:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:589 ]:	Skipping server availability check for account "jordan" with state 2
+2024-12-28 21:26:51:884 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:26:51:885 [ info nextcloud.sync.networkjob.propfind /build/source/src/libsync/networkjobs.cpp:658 ]:	PROPFIND of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:27:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:27:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:27:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:27:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:27:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 6083 s)
+2024-12-28 21:27:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "69fa882c-b950-41d0-b8a2-3ef002caefa3"
+2024-12-28 21:27:11:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:27:11:852 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:27:11:852 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:27:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "6f10aeb5-0b18-46c6-84b8-80006bbf306e"
+2024-12-28 21:27:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:27:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "10855478-9bba-4fc2-9347-313055092e3a"
+2024-12-28 21:27:31:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:27:31:729 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:27:31:729 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:27:31:741 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:27:31:741 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:27:31:742 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:27:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:27:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:27:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:27:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:27:41:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 6113 s)
+2024-12-28 21:27:41:625 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "002b4ec1-5802-4fe0-b065-9e867a6043e7"
+2024-12-28 21:27:41:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:27:41:856 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:27:41:856 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:27:53:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
+2024-12-28 21:27:53:625 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "0493a486-d30e-4ef6-b147-6b3ad81b86fd"
+2024-12-28 21:27:53:625 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::PropfindJob created for "https://nextcloud.xana.live" + "/" "OCC::ConnectionValidator"
+2024-12-28 21:27:53:625 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:589 ]:	Skipping server availability check for account "jordan" with state 2
+2024-12-28 21:27:53:838 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:27:53:838 [ info nextcloud.sync.networkjob.propfind /build/source/src/libsync/networkjobs.cpp:658 ]:	PROPFIND of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:28:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:28:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:28:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:28:11:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:28:11:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 6143 s)
+2024-12-28 21:28:11:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "ca999c56-8023-42f5-adb6-4f72cf7ad328"
+2024-12-28 21:28:11:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:28:12:270 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:28:12:270 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:28:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json" has X-Request-ID "62eac73a-5bfa-42bf-9bda-45aff9ac9372"
+2024-12-28 21:28:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "/ocs/v2.php/apps/user_status/api/v1/user_status" "OCC::UserStatusConnector"
+2024-12-28 21:28:31:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	2 "" "https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json" has X-Request-ID "9ccbd2ca-bc6f-4d16-89f9-0d40d134abf6"
+2024-12-28 21:28:31:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::JsonApiJob created for "https://nextcloud.xana.live" + "ocs/v2.php/apps/notifications/api/v2/notifications" "OCC::ServerNotificationHandler"
+2024-12-28 21:28:31:726 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:28:31:726 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/user_status/api/v1/user_status?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:28:31:746 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:28:31:746 [ info nextcloud.sync.networkjob.jsonapi /build/source/src/libsync/networkjobs.cpp:972 ]:	JsonApiJob of QUrl("https://nextcloud.xana.live/ocs/v2.php/apps/notifications/api/v2/notifications?format=json") FINISHED WITH STATUS "OK"
+2024-12-28 21:28:31:747 [ info nextcloud.gui.servernotification /build/source/src/gui/tray/notificationhandler.cpp:85 ]:	Notifications ETag header is the same as before, no new notifications.
+2024-12-28 21:28:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:959 ]:	Etag poll timer timeout
+2024-12-28 21:28:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:963 ]:	Folders to sync: 1
+2024-12-28 21:28:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:973 ]:	Number of folders that don't use push notifications: 1
+2024-12-28 21:28:41:624 [ info nextcloud.gui.folder.manager /build/source/src/gui/folderman.cpp:990 ]:	Run etag job on folder OCC::Folder(0x55c2d899d8d0)
+2024-12-28 21:28:41:624 [ info nextcloud.gui.folder /build/source/src/gui/folder.cpp:338 ]:	Trying to check "https://nextcloud.xana.live/remote.php/dav/files/jordan/" for changes via ETag check. (time since last sync: 6173 s)
+2024-12-28 21:28:41:624 [ info nextcloud.sync.accessmanager /build/source/src/libsync/accessmanager.cpp:67 ]:	6 "PROPFIND" "https://nextcloud.xana.live/remote.php/dav/files/jordan/" has X-Request-ID "fa0cf04d-313f-43c3-86ed-81607952e650"
+2024-12-28 21:28:41:624 [ info nextcloud.sync.networkjob /build/source/src/libsync/abstractnetworkjob.cpp:365 ]:	OCC::RequestEtagJob created for "https://nextcloud.xana.live" + "/" "OCC::Folder"
+2024-12-28 21:28:41:729 [ info nextcloud.sync.credentials.webflow /build/source/src/gui/creds/webflowcredentials.cpp:405 ]:	request finished
+2024-12-28 21:28:41:729 [ info nextcloud.sync.networkjob.etag /build/source/src/libsync/networkjobs.cpp:101 ]:	Request Etag of QUrl("https://nextcloud.xana.live/remote.php/dav/files/jordan/") FINISHED WITH STATUS "OK"
+2024-12-28 21:28:55:624 [ info nextcloud.gui.account.state /build/source/src/gui/accountstate.cpp:283 ]:	check connectivity
