@@ -137,6 +137,7 @@
    	  n = "nvim";
    	  s = "sudo";
 	  x = "nix flake update --flake ~/.config/nixos";
+	  g = "git pull origin main";
       };
 
    #   histSize = 10000;
