@@ -38,7 +38,6 @@
 	    pkgs.fastfetch
 	    pkgs.logseq
 	    pkgs.yazi
-	    pkgs.emacs
 	    pkgs.ripgrep
         ];
 
@@ -47,6 +46,7 @@
 	  enable = true;
 	  brews = [
 	    "mas"
+	    "emacs"
 	  ];
 	  casks = [
 	    "whisky"
