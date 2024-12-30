@@ -31,7 +31,6 @@
       environment.systemPackages =
         [
           pkgs.mkalias
-	    pkgs.alacritty
 	    pkgs.git
 	    pkgs.vim
           pkgs.neovim
@@ -39,6 +38,8 @@
 	    pkgs.fastfetch
 	    pkgs.logseq
 	    pkgs.yazi
+	    pkgs.emacs
+	    pkgs.ripgrep
         ];
 
       # Homebrew
@@ -50,6 +51,7 @@
 	  casks = [
 	    "whisky"
 	    "heroic"
+	    "ghostty"
 	  ];
 	  masApps = {
 	    "Home Assistant" = 1099568401;
