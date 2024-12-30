@@ -1,70 +1,25 @@
-# Nix .gitignore file
+# Dotfiles .gitignore #
+#######################
 
 # Directories
-akonadi/
-autostart/
-Bitwarden/
 BraveSoftware/
 dconf/
-doom/
 environment.d/
-filezilla/
 fontconfig/
 git/
+gnome-session/
+goa-1.0/
 gtk-3.0/
-gtk-4.0/
 ibus/
-KDE/
-kdedefaults/
-kde.org/
-libreoffice/
-linearmouse/
-Logseq/
-logseq/
-'Mullvad VPN'/
-Nextcloud/
-nixos.bak/
-nnn/
+nautilus/
 protonmail/
 pulse/
-session/
 systemd/
-xsettingsd/
 
 # Files
-.DS_Store
-baloofilerc
-dolphinrc
-gtkrc
-gtkrc-2.0
-kactivitymanagerdrc
-kactivitymanagerd-statsrc
-kcminputrc
-kconf_updaterc
-kded5rc
-kded6rc
-kdeglobals
-kglobalshortcutsrc
-kiorc
-konsolerc
-konsolesshconfig
-ksmserverrc
-ktimezonedrc
-ktrashrc
-kwalletrc
-kwinoutputconfig.json
-kwinrc
 mimeapps.list
-plasma-localerc
-plasma-org.kde.plasma.desktop-appletsrc
-plasmashellrc
-powermanagementprofilesrc
-trashrc
-Trolltech.conf
 user-dirs.dirs
 user-dirs.locale
-xdg-desktop-portal-kderc
 
 # Git
 .git/
-.gitignore
