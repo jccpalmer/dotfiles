@@ -1,11 +1,20 @@
 # NixOS Home Manager configuration #
 ####################################
 
-  { config, pkgs, ... }:
+  { config, pkgs, lib, flake-inputs, ... }:
 
   {
-    # User settings
 
+    # Imports
+    imports = [
+      ./protonmail-bridge.nix
+    ];
+
+    # Home Manager settings
+    programs.home-manager.enable = true;
+    home.stateVersion = "25.05";
+
+    # User settings
     home.username = "jordan";
     home.homeDirectory = "/home/jordan";
 
@@ -28,7 +37,7 @@
       nmap
       ipcalc
 
-      #Utilities
+      # Utilities
       fastfetch
       nnn
       ripgrep
@@ -50,11 +59,18 @@
       # Nix
       nix-output-monitor
 
+	# Emacs
+	emacs
+
       # Productivity
       libreoffice-fresh
+	bitwarden
       logseq
       hugo
       glow
+      protonmail-bridge
+      mullvad-vpn
+	nextcloud-client
 
       # Browser
       brave
@@ -73,21 +89,28 @@
       ethtool
       pciutils
       usbutils
+      kdePackages.kwalletmanager
+      kdePackages.kwallet-pam
+	pinentry-qt
+	tmux
 
       # Gaming
       steam
       lutris
-      heroic
+      #heroic
       protonup-qt
       protontricks
       discord
       gamemode
       gamescope
-      discord
 
       # WINE
       wine
       winetricks
+
+	# Photos
+	gimp
+	darktable
 
       # ZSH settings
       oh-my-zsh
@@ -105,43 +128,66 @@
 
     programs.zsh = {
       enable = true;
-   #   enableCompletion = true;
-   #   autosuggestions.enable = true;
-   #   syntaxHighlighting.enable = true;
+  #   enableCompletion = true;
+  #   autosuggestions.enable = true;
+  #   syntaxHighlighting.enable = true;
 
-       shellAliases = {
-         ll = "ls -l";
-	 u = "sudo nixos-rebuild switch --flake ~/.config/nixos";
-   	 n = "neovim";
-   	 s = "sudo";
+      shellAliases = {
+        ll = "ls -l";
+	  u = "sudo nixos-rebuild switch --flake ~/.config/nixos";
+   	  n = "nvim";
+   	  s = "sudo";
+	  x = "nix flake update --flake ~/.config/nixos";
+	  g = "git pull origin main";
       };
 
    #   histSize = 10000;
     };
 
     # Services
+
     services.gpg-agent = {
       enable = true;
+	pinentryPackage = pkgs.pinentry-qt;
       defaultCacheTtl = 1800;
       enableSshSupport = true;
     };
 
+    
+
+    services.protonmail-bridge = {
+      enable = true;
+      #package =
+        #pkgs.runCommand "protonmail-bridge" {
+	    #bridge = pkgs.protonmail-bridge;
+	    #nativeBuildInputs = [ pkgs.makeWrapper ];
+	  #}
+	  #''
+	  #mkdir -p $out/bin
+	  #makeWrapper $bridge/bin/protonmail-bridge $out/bin/protonmail-bridge \
+	  #  --set PATH ${lib.strings.makeBinPath [ pkgs.kdePackages.kwalletmanager ]}
+        #'';
+    };
+
+    # SystemD configuration
+
+    systemd.user.startServices = "sd-switch";
+
+    ## Overlays
+
     nixpkgs.overlays = [
       (
         final: prev: {
-	  logseq = prev.logseq.overrideAttrs (oldAttrs: {
-	    postFixup = ''
-	      makeWrapper ${prev.electron_20}/bin/electron $out/bin/${oldAttrs.pname} \
+	    logseq = prev.logseq.overrideAttrs (oldAttrs: {
+	      postFixup = ''
+	        makeWrapper ${prev.electron_20}/bin/electron $out/bin/${oldAttrs.pname} \
 	        --set "LOCAL_GIT_DIRECTORY" ${prev.git} \
-		--add-flags $out/share/${oldAttrs.pname}/resources/app \
-		--add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
-		--prefix LD_LIBRARY_PATH : "${prev.lib.makeLibraryPath [ prev.stdenv.cc.cc.lib ]}"
-	    '';
-	  });
-	}
-      )
-    ];
-
-    home.stateVersion = "25.05";
-    programs.home-manager.enable = true;
+		  --add-flags $out/share/${oldAttrs.pname}/resources/app \
+		  --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
+		  --prefix LD_LIBRARY_PATH : "${prev.lib.makeLibraryPath [ prev.stdenv.cc.cc.lib ]}"
+	        '';
+	      });
+	    }
+        )
+      ];
   }
