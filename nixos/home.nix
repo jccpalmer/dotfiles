@@ -92,6 +92,7 @@
       kdePackages.kwalletmanager
       kdePackages.kwallet-pam
 	pinentry-qt
+	tmux
 
       # Gaming
       steam

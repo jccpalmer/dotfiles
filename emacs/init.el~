@@ -1,0 +1,14 @@
+;; Emacs configuration
+
+;; Emacs user directory
+(setq user-emacs-directory "~/.config/emacs/")
+(load "~/.config/emacs/init.el)
+
+;; Change Emacs config file read location
+(setq user-init-file "~/.config/emacs/init.el")
+
+;; Remove the splash screen
+(setq inhibit-startup-message t)
+
+;; Flash when the bell rings
+(setq visible-bell t)
