@@ -116,6 +116,7 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-28.3.3"
     "electron-27.3.11"
+    "electron-31.7.6"
   ];
 
   # List packages installed in system profile. To search, run:
@@ -127,6 +128,8 @@
     neovim
     alacritty
     zsh
+    pass
+    fprintd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -153,6 +156,14 @@
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
   environment.variables.EDITOR = "neovim";
+
+  # Enable GCR.
+  services.dbus.packages = [ pkgs.gcr ];
+
+  # Enable fprintd.
+  services.fprintd.enable = true;
+  services.fprintd.tod.enable = true;
+  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
