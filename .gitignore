@@ -2,21 +2,33 @@
 #######################
 
 # Directories
+autostart/
+Bitwarden/
 BraveSoftware/
 dconf/
 environment.d/
+evolution/
 fontconfig/
 git/
 gnome-session/
 goa-1.0/
 gtk-3.0/
+gtk-4.0/
 ibus/
+libvirt/
+Logseq/
+msmtp/
 nautilus/
+Nextcloud/
+nnn/
 protonmail/
 pulse/
 systemd/
 
 # Files
+background
+gnome-initial-setup-done
+.gsd-keyboard.settings-ported
 mimeapps.list
 user-dirs.dirs
 user-dirs.locale

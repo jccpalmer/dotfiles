@@ -1,0 +1,5 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "database-client.autoSync": true,
+    "explorer.confirmDragAndDrop": false
+}

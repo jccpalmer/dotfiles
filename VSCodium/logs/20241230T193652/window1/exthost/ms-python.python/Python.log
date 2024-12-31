@@ -1,0 +1,36 @@
+2024-12-30 19:37:26.138 [info] Telemetry level is off
+2024-12-30 19:37:26.138 [info] Experiments are disabled, only manually opted experiments are active.
+2024-12-30 19:37:26.138 [info] Starting Environment refresh
+2024-12-30 19:37:26.138 [info] Searching for interpreters in posix paths locator
+2024-12-30 19:37:26.138 [info] Searching for pyenv environments
+2024-12-30 19:37:26.138 [info] Searching for conda environments
+2024-12-30 19:37:26.138 [info] Searching for global virtual environments
+2024-12-30 19:37:26.138 [info] Searching for custom virtual environments
+2024-12-30 19:37:26.138 [info] pyenv is not installed
+2024-12-30 19:37:26.138 [info] Finished searching for pyenv environments: 11 milliseconds
+2024-12-30 19:37:26.138 [info] Finished searching for custom virtual envs: 10 milliseconds
+2024-12-30 19:37:26.138 [info] > conda info --json
+2024-12-30 19:37:26.138 [info] Finished searching for global virtual envs: 20 milliseconds
+2024-12-30 19:37:26.141 [info] Finished searching for interpreters in posix paths locator: 26 milliseconds
+2024-12-30 19:37:26.141 [info] Environments refresh paths discovered (event): 27 milliseconds
+2024-12-30 19:37:26.141 [info] Environments refresh finished (event): 27 milliseconds
+2024-12-30 19:37:26.141 [info] Environments refresh paths discovered: 27 milliseconds
+2024-12-30 19:37:26.143 [info] Environment refresh took 29 milliseconds
+2024-12-30 19:37:26.148 [info] > python -c "import sys;print(sys.executable)"
+2024-12-30 19:37:26.153 [error] [Error: Command failed: python -c "import sys;print(sys.executable)"
+/bin/sh: line 1: python: command not found
+
+	at genericNodeError (node:internal/errors:984:15)
+	at wrappedFn (node:internal/errors:538:14)
+	at ChildProcess.exithandler (node:child_process:422:12)
+	at ChildProcess.emit (node:events:530:35)
+	at maybeClose (node:internal/child_process:1104:16)
+	at Socket.<anonymous> (node:internal/child_process:456:11)
+	at Socket.emit (node:events:518:28)
+	at Pipe.<anonymous> (node:net:343:12)] {
+  code: 127,
+  killed: false,
+  signal: null,
+  cmd: 'python -c "import sys;print(sys.executable)"'
+}
+2024-12-30 19:37:26.186 [error] Unable to start Jedi language server as a valid interpreter is not selected
