@@ -3,7 +3,12 @@
     "telemetry.machineId": "cce6e2692c04957fff47303c4778d3fe591b154e211ee3244fa332499a046a86",
     "telemetry.devDeviceId": "231e8932-a5bb-4e6c-8da9-60da38c0226a",
     "backupWorkspaces": {
-        "workspaces": [],
+        "workspaces": [
+            {
+                "id": "210c0a65f10da3541c82805c0e60a310",
+                "configURIPath": "file:///home/jordan/.config/VSCodium/Workspaces/1735737053525/workspace.json"
+            }
+        ],
         "folders": [
             {
                 "folderUri": "file:///home/jordan/Documents/docs"
@@ -128,7 +133,8 @@
                     },
                     {
                         "id": "saveAll",
-                        "label": "Save A&&ll"
+                        "label": "Save A&&ll",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -246,7 +252,7 @@
                     },
                     {
                         "id": "workbench.action.closeFolder",
-                        "label": "Close &&Folder"
+                        "label": "Close &&Workspace"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -472,7 +478,8 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "&&Panel"
+                                    "label": "&&Panel",
+                                    "checked": true
                                 },
                                 {
                                     "id": "toggle.toggleCustomTitleBar",
@@ -779,8 +786,7 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap",
-                        "checked": true
+                        "label": "&&Word Wrap"
                     }
                 ]
             },
@@ -788,8 +794,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1722,14 +1727,17 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/jordan/Documents/docs",
-            "backupPath": "/home/jordan/.config/VSCodium/Backups/f954b71d9c36eac137807962d88b2804",
+            "workspaceIdentifier": {
+                "id": "210c0a65f10da3541c82805c0e60a310",
+                "configURIPath": "file:///home/jordan/.config/VSCodium/Workspaces/1735737053525/workspace.json"
+            },
+            "backupPath": "/home/jordan/.config/VSCodium/Backups/210c0a65f10da3541c82805c0e60a310",
             "uiState": {
                 "mode": 0,
-                "x": 448,
-                "y": 216,
-                "width": 1024,
-                "height": 768
+                "x": 0,
+                "y": 101,
+                "width": 1920,
+                "height": 1099
             }
         },
         "openedWindows": []

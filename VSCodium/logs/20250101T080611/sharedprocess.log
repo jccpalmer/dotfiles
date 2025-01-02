@@ -1,0 +1,12 @@
+2025-01-02 05:39:14.875 [info] Getting Manifest... bungcip.better-toml
+2025-01-02 05:39:15.338 [info] Installing extension: bungcip.better-toml {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/jordan/.vscode-oss/extensions/extensions.json","path":"/home/jordan/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-21T00:45:47.611Z"}}
+2025-01-02 05:39:16.174 [info] Extracted extension to file:///home/jordan/.vscode-oss/extensions/bungcip.better-toml-0.3.2-universal: bungcip.better-toml
+2025-01-02 05:39:16.191 [info] Renamed to /home/jordan/.vscode-oss/extensions/bungcip.better-toml-0.3.2-universal
+2025-01-02 05:39:16.238 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/jordan/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/jordan/.vscode-oss/extensions/extensions.json.vsctmp'
+    at Kv.create (file:///nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:44554)
+    at xi (file:///nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:44661)
+    at jn.toFileSystemProviderError (file:///nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:28652)
+    at jn.stat (file:///nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:20509)
+    at async vu.stat (file:///nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:103140)
+    at async du.onDidFilesChange (file:///nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:80829)
+2025-01-02 05:39:16.242 [info] Extension installed successfully: bungcip.better-toml vscode-userdata:/home/jordan/.vscode-oss/extensions/extensions.json

@@ -1,0 +1,18 @@
+baseURL = 'https://jccpalmer.com/'
+languageCode = 'en-us'
+title = 'JC Palmer'
+theme = 'PaperMod'
+
+[page]
+  nextPrevInSectionOrder = 'desc'
+  nextPrevSortOrder = 'asc'
+
+[permalinks]
+  [permalinks.page]
+    blog = '/blog/:slug'
+    posts = '/posts/:slug'
+    reviews = '/posts/reviews/:slug'
+  [permalinks.section]
+    blog = '/blog'
+    posts = '/posts/'
+    reviews = '/posts/reviews'

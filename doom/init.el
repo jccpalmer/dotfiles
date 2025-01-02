@@ -192,25 +192,35 @@
        ;;literate
        (default +bindings +smartparens))
 
-;; Declare mu path.
-;;(when (and (executable-find "mu"))
-;;  (use-package mu4e
-;;    :ensure nil
-;;    :config
-;;    (setq mu4e-mu-binary (executable-find "mu"))
-;;    (setq mu4e-maildir "~/.mail")))
-
 ;; Setting up Proton Mail support.
-(require 'mu4e)
-(setq mu4e-maildir "~/.mail")
-(setq mu4e-attachment-dir "~/Downloads/")
-(setq user-mail-address "admin@jccpalmer.com")
-(setq user-full-name "JC Palmer")
-(setq mu4e-get-mail-command "mbsync protonmail")
-(setq mu4e-change-filenames-when-moving t)
-(setq mu4e-update-interval 60)
-(setq message-send-mail-function 'smtpmail-send-it
-  smtpmail-auth-credentials "~/.authinfo.gpg"
-  smtpmail-smtp-server "127.0.0.1"
-  smtpmail-stream-type 'starttls
-  smtpmail-smtp-service 1025)
+(use-package mu4e
+;  :straight nil
+  :defer 20
+  :config
+
+  (setq mu4e-change-filename-when-moving t
+    mu4e-update-interval (* 1 60)
+    mu4e-compose-format-flowed t
+    mu4e-get-mail-command "mbsync -a")
+    mu4e-user-mail-address "admin@jccpalmer.com"
+    mu4e-compose-reply-ignore-address '("no-?reply" "admin@jccpalmer.com")
+
+  (setq mu4e-maildir "~/.mail"
+    mu4e-attachment-dir "~/Downloads"
+    mu4e-drafts-folder "/drafts"
+    mu4e-sent-folder "/protonSent"
+    mu4e-refile-folder "/protonArchive"
+    mu4e-trash-folder "/protonTrash")
+
+  (setq mu4e-maildir-shortcuts
+    '(("/inbox"         . ?i)
+	("/protonSent"    . ?s)
+	("/protonTrash"   . ?t)
+	("/drafts"        . ?d)
+	("/protonArchive" . ?a)))
+  
+  (setq message-send-mail-function 'smtp-sent-it
+    auth-sources '("~/.authinfo.gpg")
+    smtpmail-smtp-server "127.0.0.1"
+    smtpmail-smtp-service 1025
+    smtpmail-stream-type 'starttls))

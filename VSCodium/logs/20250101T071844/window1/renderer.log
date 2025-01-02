@@ -1,0 +1,15 @@
+2025-01-01 07:18:44.967 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-vscode.vscode-selfhost-test-provider' wants API proposal 'attributableCoverage' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-01-01 07:18:44.967 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-01-01 07:18:44.967 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.debugpy' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-01-01 07:18:45.230 [info] Started local extension host with pid 72821.
+2025-01-01 07:18:45.659 [warning] [redhat.vscode-yaml]: Cannot register 'redhat.telemetry.enabled'. This property is already registered.
+2025-01-01 07:18:47.997 [info] [perf] Render performance baseline is 19ms
+2025-01-01 07:18:50.881 [error] Timed out waiting for authentication provider to register
+2025-01-01 07:55:44.851 [error] Unable to read file '/home/jordan/Documents/docs/package.json' (Error: File not modified since): Error: Unable to read file '/home/jordan/Documents/docs/package.json' (Error: File not modified since)
+    at $rt.restoreReadError (vscode-file://vscode-app/nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:3108:89893)
+    at $rt.doReadFileStream (vscode-file://vscode-app/nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:3108:89758)
+    at async iat.doRead (vscode-file://vscode-app/nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:3115:12971)
+    at async iat.readStream (vscode-file://vscode-app/nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:3115:12726)
+    at async Mge.resolveFromFile (vscode-file://vscode-app/nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:1295:15912)
+    at async Mge.resolve (vscode-file://vscode-app/nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:1295:14074)
+    at async vscode-file://vscode-app/nix/store/lcc8767cmnjrz8mpfm0pir5dzv5hw73i-vscodium-1.96.2.24355/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:3115:7687
