@@ -9,6 +9,7 @@ BraveSoftware/
 dconf/
 environment.d/
 evolution/
+filezilla/
 fontconfig/
 git/
 glib-2.0/
@@ -30,6 +31,7 @@ systemd/
 
 # Files
 background
+.DS_Store
 gnome-initial-setup-done
 .gsd-keyboard.settings-ported
 mimeapps.list
