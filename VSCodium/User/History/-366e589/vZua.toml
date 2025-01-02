@@ -1,7 +1,0 @@
-baseURL = 'https://jccpalmer.com/'
-languageCode = 'en-us'
-title = 'JC Palmer'
-theme = 'PaperMod'
-params:
-  contact:
-    email: contact@jccpalmer.com

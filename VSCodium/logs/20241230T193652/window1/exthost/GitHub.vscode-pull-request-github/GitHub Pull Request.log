@@ -1,7 +1,0 @@
-2024-12-30 19:37:25.524 [warning] /home/jordan/.ssh/config: ENOENT: no such file or directory, open '/home/jordan/.ssh/config'
-2024-12-30 19:37:25.524 [info] Activation> Extension version: 0.102.0
-2024-12-30 19:37:25.524 [info] TemporaryState> Error in initialization: Unable to delete nonexistent file 'vscode-userdata:/home/jordan/.config/VSCodium/User/globalStorage/github.vscode-pull-request-github/temp'
-2024-12-30 19:37:25.546 [info] Looking for git repository
-2024-12-30 19:37:25.546 [info] Found 0 repositories during activation
-2024-12-30 19:37:25.546 [info] Git repository found, initializing review manager and pr tree view.
-2024-12-30 19:37:25.547 [info] Registering git provider
