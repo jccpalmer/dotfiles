@@ -40,16 +40,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/.org/")
-
-;; Setting up mu4e support.
-;;(add-to-list 'load-path "/run/current-system/sw/bin/mu")
-;;(after! mu4e
-;;  (setq sendmail-program (executable-find "msmtp")
-;;	send-mail-function #'smtpmail-send-it
-;;	message-sendmail-f-is-evil t
-;;	message-sendmail-extra-arguments '("--read-envelope-from")
-;;	message-send-mail-function #'message-send-mail-with-sendmail))
+(setq org-directory "~/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
