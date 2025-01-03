@@ -4,30 +4,53 @@
 # Directories
 astro/
 autostart/
+.avalonia-build-tasks/
 Bitwarden/
 BraveSoftware/
+bspwm/
+bspwm_pacnew_2025-01-02/
 dconf/
+dunst/
+emacs/
 environment.d/
 evolution/
 filezilla/
 fontconfig/
+geany/
 git/
 glib-2.0/
 gnome-session/
+go/
 goa-1.0/
 gtk-3.0/
 gtk-4.0/
 ibus/
+Kvantum/
 libvirt/
+light/
 Logseq/
 msmtp/
 mu4e/
 nautilus/
+neofetch/
+networkmanager-dmenu/
 Nextcloud/
+nitrogen/
 nnn/
+obmenu-generator/
+openbox/
+openbox_pacnew_2025-01-02/
+plank/
 protonmail/
 pulse/
+qt5ct/
+qt6ct/
+ranger/
+rofi/
 systemd/
+Thunar/
+xfce4/
+yay/
 
 # Files
 background
@@ -35,6 +58,10 @@ background
 gnome-initial-setup-done
 .gsd-keyboard.settings-ported
 mimeapps.list
+picom.conf
+picom-ibhagwan.conf
+picom-jonaburg.conf
+picom-original.conf
 user-dirs.dirs
 user-dirs.locale
 
