@@ -69,7 +69,7 @@
        :emacs
        dired             ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
-       ;;eww               ; the internet is gross
+       eww               ; the internet is gross
        ;;ibuffer           ; interactive buffer management
        undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
@@ -87,13 +87,13 @@
 
        :tools
        ;;ansible
-       ;;biblio            ; Writes a PhD for you (citation needed)
+       biblio            ; Writes a PhD for you (citation needed)
        ;;collab            ; buffers with friends
        ;;debugger          ; FIXME stepping through code, to help you add bugs
        ;;direnv
        ;;docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
-       ;;ein               ; tame Jupyter notebooks with emacs
+       ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
        ;;lsp               ; M-x vscode
@@ -102,14 +102,15 @@
        pass              ; password manager for nerds
        pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-       ;;terraform         ; infrastructure as code
+	 soffice
+       terraform         ; infrastructure as code
        tmux              ; an API for interacting with tmux
        tree-sitter       ; syntax and parsing, sitting in a tree...
        upload            ; map local to remote projects via ssh/ftp
 
        :os
        (:if (featurep :system 'macos) macos)  ; improve compatibility with macOS
-       ;;tty               ; improve the terminal Emacs experience
+       tty               ; improve the terminal Emacs experience
 
        :lang
        ;;agda              ; types of types of types of types...
@@ -152,7 +153,7 @@
        ;;nim               ; python + lisp at the speed of c
        nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       org               ; organize your plain life in plain text
+       org (+roam2 +journal)        ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more
@@ -193,34 +194,73 @@
        (default +bindings +smartparens))
 
 ;; Setting up Proton Mail support.
-(use-package mu4e
+;(use-package mu4e
 ;  :straight nil
-  :defer 20
-  :config
+;  :defer 20
+;  :config
+;
+;  (setq mu4e-change-filename-when-moving t
+;    mu4e-update-interval (* 1 60)
+;    mu4e-compose-format-flowed t
+;    mu4e-get-mail-command "mbsync -a")
+;    mu4e-user-mail-address "admin@jccpalmer.com"
+;    mu4e-compose-reply-ignore-address '("no-?reply" "admin@jccpalmer.com")
+;
+;  (setq mu4e-maildir "~/.mail"
+;    mu4e-attachment-dir "~/Downloads"
+;    mu4e-drafts-folder "/drafts"
+;    mu4e-sent-folder "/protonSent"
+;    mu4e-refile-folder "/protonArchive"
+;    mu4e-trash-folder "/protonTrash")
+;
+;  (setq mu4e-maildir-shortcuts
+;    '(("/inbox"         . ?i)
+;	("/protonSent"    . ?s)
+;	("/protonTrash"   . ?t)
+;	("/drafts"        . ?d)
+;	("/protonArchive" . ?a)))
+;  
+;  (setq message-send-mail-function 'smtp-sent-it
+;    auth-sources '("~/.authinfo.gpg")
+;    smtpmail-smtp-server "127.0.0.1"
+;    smtpmail-smtp-service 1025
+;    smtpmail-stream-type 'starttls))
 
-  (setq mu4e-change-filename-when-moving t
-    mu4e-update-interval (* 1 60)
-    mu4e-compose-format-flowed t
-    mu4e-get-mail-command "mbsync -a")
-    mu4e-user-mail-address "admin@jccpalmer.com"
-    mu4e-compose-reply-ignore-address '("no-?reply" "admin@jccpalmer.com")
+;; Org-roam settings
 
-  (setq mu4e-maildir "~/.mail"
-    mu4e-attachment-dir "~/Downloads"
-    mu4e-drafts-folder "/drafts"
-    mu4e-sent-folder "/protonSent"
-    mu4e-refile-folder "/protonArchive"
-    mu4e-trash-folder "/protonTrash")
+  (setq org-directory "~/.notes")
 
-  (setq mu4e-maildir-shortcuts
-    '(("/inbox"         . ?i)
-	("/protonSent"    . ?s)
-	("/protonTrash"   . ?t)
-	("/drafts"        . ?d)
-	("/protonArchive" . ?a)))
-  
-  (setq message-send-mail-function 'smtp-sent-it
-    auth-sources '("~/.authinfo.gpg")
-    smtpmail-smtp-server "127.0.0.1"
-    smtpmail-smtp-service 1025
-    smtpmail-stream-type 'starttls))
+  (use-package org-roam
+    :ensure t
+    :after org
+    :init
+    (setq org-roam-v2-ack t)
+    :custom
+    (org-roam-directory "~/.notes/roam")
+    :bind (("C-c n f" . org-roam-node-find)
+           ("C-c n r" . org-roam-node-random)		    
+           (:map org-mode-map
+                 (("C-c n i" . org-roam-node-insert)
+                  ("C-c n o" . org-id-get-create)
+                  ("C-c n t" . org-roam-tag-add)
+                  ("C-c n a" . org-roam-alias-add)
+                  ("C-c n l" . org-roam-buffer-toggle))))
+    :config
+    (org-roam-setup))
+
+;;; Templates
+
+(setq org-roam-capture-templates
+        '(("d" "default" plain "%?"
+           :if-new
+           (file+head "${slug}.org"
+                      "#+title: ${title}\n#+date: %u\n#+lastmod: \n\n")
+           :immediate-finish t))
+        time-stamp-start "#\\+lastmod: [\t]*")
+
+(setq citar-templates
+      '((main . "${author editor:30%sn}     ${date year issued:4}     ${title:48}")
+        (suffix . "          ${=key= id:15}    ${=type=:12}    ${tags keywords:*}")
+        (preview . "${author editor:%etal} (${year issued date}) ${title}, ${journal journaltitle publisher container-title collection-title}.\n")
+        (note . "Notes on ${author editor:%etal}, ${title}")))
+      
