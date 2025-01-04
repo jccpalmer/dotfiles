@@ -82,7 +82,7 @@
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       (spell +flyspell) ; tasing you for misspelling mispelling
+       (spell +enchant) ; tasing you for misspelling mispelling
        grammar           ; tasing grammar mistake every you make
 
        :tools
@@ -263,4 +263,5 @@
         (suffix . "          ${=key= id:15}    ${=type=:12}    ${tags keywords:*}")
         (preview . "${author editor:%etal} (${year issued date}) ${title}, ${journal journaltitle publisher container-title collection-title}.\n")
         (note . "Notes on ${author editor:%etal}, ${title}")))
-      
+
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
