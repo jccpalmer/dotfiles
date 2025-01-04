@@ -47,6 +47,7 @@
 	  brews = [
 	    "mas"
 	    "emacs"
+	    "ispell"
 	  ];
 	  casks = [
 	    "whisky"

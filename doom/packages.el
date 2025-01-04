@@ -49,4 +49,7 @@
 ;; (unpin! t)
 
 (package! emacsql)
-;(package! emacsql-sqlite)
+
+;; Org-novelist
+(package! org-novelist
+  :recipe (:host github :repo "sympodius/org-novelist"))
