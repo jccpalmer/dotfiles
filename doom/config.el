@@ -77,5 +77,18 @@
 ;; Citar configuration
 
 (setq citar-bibliography '("~/.notes/references.bib"))
-;(setq citar-notes-paths '(~/.notes/library/notes))
-;(setq citar-library-paths '(~/.notes/library/files))
+(setq citar-notes-paths '(~/.notes/library/notes))
+(setq citar-library-paths '(~/.notes/library/files))
+
+;; Org-roam UI
+
+(use-package! websocket
+  :after org-roam)
+
+(use-package! org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))

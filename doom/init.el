@@ -102,7 +102,7 @@
        pass              ; password manager for nerds
        pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-	 soffice
+       soffice
        terraform         ; infrastructure as code
        tmux              ; an API for interacting with tmux
        tree-sitter       ; syntax and parsing, sitting in a tree...
@@ -194,69 +194,69 @@
        (default +bindings +smartparens))
 
 ;; Setting up Proton Mail support.
-;(use-package mu4e
-;  :straight nil
-;  :defer 20
-;  :config
-;
-;  (setq mu4e-change-filename-when-moving t
-;    mu4e-update-interval (* 1 60)
-;    mu4e-compose-format-flowed t
-;    mu4e-get-mail-command "mbsync -a")
-;    mu4e-user-mail-address "admin@jccpalmer.com"
-;    mu4e-compose-reply-ignore-address '("no-?reply" "admin@jccpalmer.com")
-;
-;  (setq mu4e-maildir "~/.mail"
-;    mu4e-attachment-dir "~/Downloads"
-;    mu4e-drafts-folder "/drafts"
-;    mu4e-sent-folder "/protonSent"
-;    mu4e-refile-folder "/protonArchive"
-;    mu4e-trash-folder "/protonTrash")
-;
-;  (setq mu4e-maildir-shortcuts
-;    '(("/inbox"         . ?i)
-;	("/protonSent"    . ?s)
-;	("/protonTrash"   . ?t)
-;	("/drafts"        . ?d)
-;	("/protonArchive" . ?a)))
-;  
-;  (setq message-send-mail-function 'smtp-sent-it
-;    auth-sources '("~/.authinfo.gpg")
-;    smtpmail-smtp-server "127.0.0.1"
-;    smtpmail-smtp-service 1025
-;    smtpmail-stream-type 'starttls))
+                                        ;(use-package mu4e
+                                        ;  :straight nil
+                                        ;  :defer 20
+                                        ;  :config
+                                        ;
+                                        ;  (setq mu4e-change-filename-when-moving t
+                                        ;    mu4e-update-interval (* 1 60)
+                                        ;    mu4e-compose-format-flowed t
+                                        ;    mu4e-get-mail-command "mbsync -a")
+                                        ;    mu4e-user-mail-address "admin@jccpalmer.com"
+                                        ;    mu4e-compose-reply-ignore-address '("no-?reply" "admin@jccpalmer.com")
+                                        ;
+                                        ;  (setq mu4e-maildir "~/.mail"
+                                        ;    mu4e-attachment-dir "~/Downloads"
+                                        ;    mu4e-drafts-folder "/drafts"
+                                        ;    mu4e-sent-folder "/protonSent"
+                                        ;    mu4e-refile-folder "/protonArchive"
+                                        ;    mu4e-trash-folder "/protonTrash")
+                                        ;
+                                        ;  (setq mu4e-maildir-shortcuts
+                                        ;    '(("/inbox"         . ?i)
+                                        ;	("/protonSent"    . ?s)
+                                        ;	("/protonTrash"   . ?t)
+                                        ;	("/drafts"        . ?d)
+                                        ;	("/protonArchive" . ?a)))
+                                        ;
+                                        ;  (setq message-send-mail-function 'smtp-sent-it
+                                        ;    auth-sources '("~/.authinfo.gpg")
+                                        ;    smtpmail-smtp-server "127.0.0.1"
+                                        ;    smtpmail-smtp-service 1025
+                                        ;    smtpmail-stream-type 'starttls))
 
 ;; Org-roam settings
 
-  (setq org-directory "~/.notes")
+(setq org-directory "~/.notes")
 
-  (use-package org-roam
-    :ensure t
-    :after org
-    :init
-    (setq org-roam-v2-ack t)
-    :custom
-    (org-roam-directory "~/.notes/roam")
-    :bind (("C-c n f" . org-roam-node-find)
-           ("C-c n r" . org-roam-node-random)		    
-           (:map org-mode-map
-                 (("C-c n i" . org-roam-node-insert)
-                  ("C-c n o" . org-id-get-create)
-                  ("C-c n t" . org-roam-tag-add)
-                  ("C-c n a" . org-roam-alias-add)
-                  ("C-c n l" . org-roam-buffer-toggle))))
-    :config
-    (org-roam-setup))
+(use-package org-roam
+  :ensure t
+  :after org
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/.notes/roam")
+  :bind (("C-c n f" . org-roam-node-find)
+         ("C-c n r" . org-roam-node-random)
+         (:map org-mode-map
+               (("C-c n i" . org-roam-node-insert)
+                ("C-c n o" . org-id-get-create)
+                ("C-c n t" . org-roam-tag-add)
+                ("C-c n a" . org-roam-alias-add)
+                ("C-c n l" . org-roam-buffer-toggle))))
+  :config
+  (org-roam-setup))
 
 ;;; Templates
 
 (setq org-roam-capture-templates
-        '(("d" "default" plain "%?"
-           :if-new
-           (file+head "${slug}.org"
-                      "#+title: ${title}\n#+date: %u\n#+lastmod: \n\n")
-           :immediate-finish t))
-        time-stamp-start "#\\+lastmod: [\t]*")
+      '(("d" "default" plain "%?"
+         :if-new
+         (file+head "${slug}.org"
+                    "#+title: ${title}\n#+date: %u\n#+lastmod: \n\n")
+         :immediate-finish t))
+      time-stamp-start "#\\+lastmod: [\t]*")
 
 (setq citar-templates
       '((main . "${author editor:30%sn}     ${date year issued:4}     ${title:48}")
@@ -271,10 +271,10 @@
 (use-package citar
   :no-require
   :custom
-    (org-cite-global-bibiliography '("~/.notes/references.bib"))
-    (org-cite-insert-processor 'citar)
-    (org-cite-follow-processor 'citar)
-    (org-cite-activate-processor 'citar)
-    (citar-bibliography org-cite-global-bibliography)
+  (org-cite-global-bibiliography '("~/.notes/references.bib"))
+  (org-cite-insert-processor 'citar)
+  (org-cite-follow-processor 'citar)
+  (org-cite-activate-processor 'citar)
+  (citar-bibliography org-cite-global-bibliography)
   :bind
-    (:map org-mode-map :package org ("C-c b" . #'org-cite-insert)))
+  (:map org-mode-map :package org ("C-c b" . #'org-cite-insert)))

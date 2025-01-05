@@ -56,3 +56,7 @@
 ;; Org-novelist
 (package! org-novelist
   :recipe (:host github :repo "sympodius/org-novelist"))
+
+;; Org-roam UI
+(unpin! org-roam)
+(package! org-roam-ui)
