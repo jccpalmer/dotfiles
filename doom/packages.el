@@ -50,6 +50,9 @@
 
 (package! emacsql)
 
+(package! citar-org-roam)
+(package! org-ref-prettify)
+
 ;; Org-novelist
 (package! org-novelist
   :recipe (:host github :repo "sympodius/org-novelist"))

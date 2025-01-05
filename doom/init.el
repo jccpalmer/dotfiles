@@ -265,3 +265,16 @@
         (note . "Notes on ${author editor:%etal}, ${title}")))
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; Citar settings
+
+(use-package citar
+  :no-require
+  :custom
+    (org-cite-global-bibiliography '("~/.notes/references.bib"))
+    (org-cite-insert-processor 'citar)
+    (org-cite-follow-processor 'citar)
+    (org-cite-activate-processor 'citar)
+    (citar-bibliography org-cite-global-bibliography)
+  :bind
+    (:map org-mode-map :package org ("C-c b" . #'org-cite-insert)))
