@@ -184,7 +184,7 @@
 
        :app
        calendar
-       ;;emms
+       emms
        everywhere        ; *leave* Emacs!? You must be joking
        irc               ; how neckbeards socialize
        (rss +org)        ; emacs as an RSS reader
@@ -278,3 +278,9 @@
   (citar-bibliography org-cite-global-bibliography)
   :bind
   (:map org-mode-map :package org ("C-c b" . #'org-cite-insert)))
+
+(use-package citar-org-roam
+  :after (citar-org-roam)
+  :config (citar-org-roam-mode))
+
+(setq citar-org-roam-note-title-template "${author} - ${title}")

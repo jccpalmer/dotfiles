@@ -76,9 +76,11 @@
 
 ;; Citar configuration
 
-(setq citar-bibliography '("~/.notes/references.bib"))
-(setq citar-notes-paths '(~/.notes/library/notes))
-(setq citar-library-paths '(~/.notes/library/files))
+(after! citar
+  (setq! citar-bibliography  '("~/.notes/references.bib")
+         citar-notes-paths   '("~/.notes/reference/notes")
+         citar-library-paths '("~/.notes/reference/files"))
+)
 
 ;; Org-roam UI
 
