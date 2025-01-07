@@ -88,7 +88,7 @@ gtk-4.0
 gtkrc
 gtkrc-2.0
 hypr
-kactivitymanagerd-static
+kactivitymanagerd-statsrc
 kactivitymanagerdrc
 kate-externaltoolspluginrc
 katerc
@@ -108,7 +108,7 @@ ktrashrc
 kwalletrc
 kwinoutputconfig.json
 kwinrc
-lininput-gestures.conf
+libinput-gestures.conf
 mimeapps.list
 ml4w
 plasma-localerc
