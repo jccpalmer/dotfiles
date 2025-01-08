@@ -52,6 +52,8 @@
 
 (package! citar-org-roam)
 (package! org-ref-prettify)
+(package! org-super-agenda)
+(package! org-journal)
 
 ;; Org-novelist
 (package! org-novelist

@@ -2,19 +2,23 @@
 #######################
 
 # Directories
+ags/
 astro/
 autostart/
 .avalonia-build-tasks/
+bashrc/
 Bitwarden/
 BraveSoftware/
 bspwm/
 bspwm_pacnew_2025-01-02/
 cachyos/
 dconf/
+dotfiles/
 dunst/
 emacs/
 environment.d/
 evolution/
+fastfetch/
 filezilla/
 fish/
 fontconfig/
@@ -26,12 +30,15 @@ go/
 goa-1.0/
 gtk-3.0/
 gtk-4.0/
+htop/
+hypr/
 kate/
 KDE/
 kde.org/
 kdeconnect/
 kdedefaults/
 keepassxc/
+Kvantum/
 ibus/
 Kvantum/
 libaccounts-glib/
@@ -39,6 +46,8 @@ libvirt/
 light/
 Logseq/
 micro/
+ml4w/
+ml4w-hyprland-settings/
 msmtp/
 mu4e/
 nautilus/
@@ -47,7 +56,9 @@ networkmanager-dmenu/
 Nextcloud/
 nitrogen/
 nnn/
+nwg-dock-hyprland/
 obmenu-generator/
+ohmyposh/
 openbox/
 openbox_pacnew_2025-01-02/
 plank/
@@ -61,10 +72,15 @@ session/
 systemd/
 Thunar/
 viewnior/
+vim/
 wal/
+waybar/
+waypaper/
+wlogout/
 xfce4/
 xsettingsd/
 yay/
+zshrc/
 
 # Files
 ags

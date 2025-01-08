@@ -94,3 +94,50 @@
         org-roam-ui-follow t
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
+
+;; Org-journal settings
+
+(use-package! org-journal
+  :ensure t
+  :defer t
+  :init
+    (setq org-journal-prefix-key "C-c j")
+  :config
+    (setq org-journal-dir "~/.writing/journal/"
+          org-journal-date-format "%d %B %Y"))
+
+;;; Keymappings
+
+(map! :leader
+      (:prefix ("j" . "journal") ;; org-journal bindings
+        :desc "Create new journal entry" "j" #'org-journal-new-entry
+        :desc "Open previous entry" "p" #'org-journal-open-previous-entry
+        :desc "Open next entry" "n" #'org-journal-open-next-entry
+        :desc "Search journal" "s" #'org-journal-search-forever))
+
+(map!
+ (:map calendar-mode-map
+   :n "o" #'org-journal-display-entry
+   :n "p" #'org-journal-previous-entry
+   :n "n" #'org-journal-next-entry
+   :n "O" #'org-journal-new-date-entry))
+
+(map!
+ :map (calendar-mode-map)
+ :localleader
+   "w" #'org-journal-search-calendar-week
+   "m" #'org-journal-search-calendar-month
+   "y" #'org-journal-search-calendar-year)
+
+;;; Templates
+
+(defun org-journal-file-header-func (time)
+  "Custom function to create journal header."
+  (concat
+    (pcase org-journal-file-type
+      (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+      (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+      (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+      (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+
+(setq org-journal-file-header 'org-journal-file-header-func)
