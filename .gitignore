@@ -114,6 +114,7 @@ kconf_updaterc
 kded5rc
 kdeglobals
 kglobalshortcutsrc
+kitty
 kiorc
 knfsshare
 konsolerc
@@ -128,6 +129,8 @@ kwinrc
 libinput-gestures.conf
 mimeapps.list
 ml4w
+nwg-dock-hyprland
+ohmyposh
 plasma-localerc
 plasma-org.kde.plasma.desktop-appletsrc
 plasmarc
@@ -138,12 +141,21 @@ picom.conf
 picom-ibhagwan.conf
 picom-jonaburg.conf
 picom-original.conf
+qt6ct
 QtProject.conf
+rofi
 trashrc
 Trolltech.conf
 user-dirs.dirs
 user-dirs.locale
+vim
+wal
+waybar
+waypaper
+wlogout
 xdg-desktop-portal-kderc
+xsettingsd
+zshrc
 
 # Git
 .git/
