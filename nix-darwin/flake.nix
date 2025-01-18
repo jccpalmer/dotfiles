@@ -51,6 +51,7 @@
 	    "pandoc"
 	    "hugo"
 	    "qemu"
+	    "enchant"
 	    "sass/sass/sass"
 	  ];
 	  casks = [
