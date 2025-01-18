@@ -1,39 +1,58 @@
 {
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
   "schemes" : [
     {
+      "buttons" : {
+        "universalBackForward" : true
+      },
       "if" : {
         "device" : {
-          "productName" : "MX Master 3 Mac",
           "vendorID" : "0x46d",
           "productID" : "0xb023",
-          "category" : "mouse",
-          "serialNumber" : "6314900DC10F782C"
+          "productName" : "MX Master 3 Mac",
+          "serialNumber" : "6314900DC10F782C",
+          "category" : "mouse"
         }
       },
       "scrolling" : {
         "reverse" : {
           "vertical" : true
         }
+      }
+    },
+    {
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : false
+        }
       },
-      "buttons" : {
-        "universalBackForward" : true
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0"
+        }
       }
     },
     {
       "if" : {
         "device" : {
-          "vendorID" : "0x0",
-          "productName" : "Apple Internal Keyboard \/ Trackpad",
-          "category" : "trackpad",
-          "productID" : "0x0"
+          "serialNumber" : "98:46:0A:A6:EE:1C",
+          "productID" : "0x269",
+          "productName" : "Jordan's Magic Mouse",
+          "category" : "mouse",
+          "vendorID" : "0x4c"
         }
       },
       "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
         "reverse" : {
-          "vertical" : false
+          "vertical" : true
         }
       }
     }
-  ],
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+  ]
 }

@@ -49,12 +49,16 @@
 	    "emacs"
 	    "ispell"
 	    "pandoc"
+	    "hugo"
+	    "qemu"
+	    "sass/sass/sass"
 	  ];
 	  casks = [
 	    "whisky"
 	    "heroic"
 	    "ghostty"
 	    "basictex"
+	    "keepassxc"
 	  ];
 	  masApps = {
 	    "Home Assistant" = 1099568401;
