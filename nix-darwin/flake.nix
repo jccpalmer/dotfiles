@@ -60,6 +60,7 @@
 	    "ghostty"
 	    "basictex"
 	    "keepassxc"
+	    "joplin"
 	  ];
 	  masApps = {
 	    "Home Assistant" = 1099568401;
