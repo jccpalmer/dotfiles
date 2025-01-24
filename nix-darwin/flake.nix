@@ -36,7 +36,6 @@
           pkgs.neovim
 	    pkgs.tmux
 	    pkgs.fastfetch
-	    pkgs.logseq
 	    pkgs.yazi
 	    pkgs.ripgrep
         ];

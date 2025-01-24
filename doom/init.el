@@ -228,7 +228,7 @@
 
 ;; Org-roam settings
 
-(setq org-directory "~/.notes")
+(setq org-directory "~/.writing")
 
 (use-package org-roam
   :ensure t
@@ -236,7 +236,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/.notes/roam")
+  (org-roam-directory "~/.writing/roam")
   :bind (("C-c n f" . org-roam-node-find)
          ("C-c n r" . org-roam-node-random)
          (:map org-mode-map
