@@ -45,15 +45,17 @@
 	  enable = true;
 	  brews = [
 	    "mas"
-	    "emacs"
 	    "ispell"
 	    "pandoc"
 	    "hugo"
 	    "qemu"
 	    "enchant"
+	    "sketchybar"
+	    "node"
 	    "sass/sass/sass"
 	  ];
 	  casks = [
+	    "emacs"
 	    "whisky"
 	    "heroic"
 	    "ghostty"
@@ -61,6 +63,7 @@
 	    "keepassxc"
 	    "joplin"
 	    "signal"
+	    "affine"
 	    "nikitabobko/tap/aerospace"
 	  ];
 	  masApps = {
@@ -134,8 +137,8 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#MacBook-Pro
-    darwinConfigurations."MacBook-Pro" = nix-darwin.lib.darwinSystem {
+    # $ darwin-rebuild build --flake .#glados
+    darwinConfigurations."glados" = nix-darwin.lib.darwinSystem {
       modules = [ 
 	  configuration 
         nix-homebrew.darwinModules.nix-homebrew
