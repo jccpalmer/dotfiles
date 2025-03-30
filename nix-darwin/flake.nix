@@ -64,6 +64,7 @@
 	    "joplin"
 	    "signal"
 	    "affine"
+	    "triliumnext-notes"
 	    "nikitabobko/tap/aerospace"
 	  ];
 	  masApps = {
