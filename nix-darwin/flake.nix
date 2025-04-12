@@ -52,10 +52,12 @@
 	    "enchant"
 	    "sketchybar"
 	    "node"
+	    "libvirt"
+	    "virt-manager"
+	    "gsettings-desktop-schemas"
 	    "sass/sass/sass"
 	  ];
 	  casks = [
-	    "emacs"
 	    "whisky"
 	    "heroic"
 	    "ghostty"
@@ -63,14 +65,11 @@
 	    "keepassxc"
 	    "joplin"
 	    "signal"
-	    "affine"
-	    "triliumnext-notes"
 	    "nikitabobko/tap/aerospace"
 	  ];
 	  masApps = {
 	    "Home Assistant" = 1099568401;
           "GoodLinks" = 1474335294;
-	    "Focalboard" = 1556908618;
 	    "Wireguard" = 1451685025;
 	  };
 	  onActivation.cleanup = "zap";
