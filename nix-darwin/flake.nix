@@ -65,11 +65,11 @@
 	    "keepassxc"
 	    "joplin"
 	    "signal"
+	    "alfred"
 	    "nikitabobko/tap/aerospace"
 	  ];
 	  masApps = {
 	    "Home Assistant" = 1099568401;
-          "GoodLinks" = 1474335294;
 	    "Wireguard" = 1451685025;
 	  };
 	  onActivation.cleanup = "zap";

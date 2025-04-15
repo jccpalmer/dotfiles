@@ -34,4 +34,4 @@ require("lazy").setup({
 
 vim.cmd("colorscheme monokai-pro-octagon")
 
-vim.cmd("cd /Users/jordan/GitHub/neovim")
+-- vim.cmd("cd /Users/jordan/GitHub/neovim")
