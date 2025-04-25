@@ -58,6 +58,7 @@
 	    "sass/sass/sass"
 	  ];
 	  casks = [
+	    "alacritty"
 	    "whisky"
 	    "heroic"
 	    "ghostty"
@@ -66,6 +67,10 @@
 	    "joplin"
 	    "signal"
 	    "alfred"
+	    "brave-browser"
+	    "marta"
+	    "thunderbird"
+	    "font-meslo-lg-nerd-font"
 	    "nikitabobko/tap/aerospace"
 	  ];
 	  masApps = {
