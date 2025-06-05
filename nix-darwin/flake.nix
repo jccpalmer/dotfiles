@@ -26,6 +26,8 @@
 
       nixpkgs.config.allowUnfree = true;
 
+	system.primaryUser = "jordan";
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
