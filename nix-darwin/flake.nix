@@ -61,7 +61,7 @@
 	  ];
 	  casks = [
 	    "alacritty"
-            "appflowy"
+          "appflowy"
 	    "whisky"
 	    "heroic"
 	    "basictex"
@@ -72,6 +72,8 @@
 	    "marta"
 	    "gpt4all"
 	    "onlyoffice"
+	    "xld"
+	    "zen"
 	    "font-meslo-lg-nerd-font"
 	    "nikitabobko/tap/aerospace"
 	  ];
