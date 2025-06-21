@@ -70,6 +70,7 @@
 	    "alfred"
 	    "marta"
 	    "gpt4all"
+	    "localsend"
 	    "onlyoffice"
 	    "utm"
 	    "xld"
