@@ -72,6 +72,7 @@
 	    "gpt4all"
 	    "localsend"
 	    "onlyoffice"
+	    "telegram"
 	    "utm"
 	    "xld"
 	    "zen"
