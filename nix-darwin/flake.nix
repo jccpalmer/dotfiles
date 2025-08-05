@@ -61,6 +61,7 @@
 	  ];
 	  casks = [
 	    "alacritty"
+	    "appflowy"
 	    "whisky"
 	    "heroic"
 	    "basictex"
