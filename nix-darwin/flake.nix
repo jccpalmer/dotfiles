@@ -62,6 +62,7 @@
 	  casks = [
 	    "alacritty"
 	    "appflowy"
+	    "cursor"
 	    "whisky"
 	    "heroic"
 	    "basictex"
