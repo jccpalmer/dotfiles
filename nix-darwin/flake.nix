@@ -62,10 +62,10 @@
 	    "mu"
 	    "isync"
 	    "gpg"
+	    "enchant"
 	  ];
 	  casks = [
 	    "alacritty"
-	    "appflowy"
 	    "cursor"
 	    "emacs-app"
 	    "whisky"
