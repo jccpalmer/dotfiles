@@ -7,7 +7,8 @@
 
 (setq doom-theme 'doom-one
       display-line-numbers-type t
-      org-directory "~/.writing/")
+      org-directory "~/.writing/"
+	org-default-notes-file (concat org-directory "notes/inbox.org"))
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
