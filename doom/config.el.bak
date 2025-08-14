@@ -95,45 +95,21 @@
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
 
-
 ;; Org-journal settings
 
 (use-package! org-journal
   :ensure t
   :defer t
   :init
-  (setq org-journal-prefix-key "C-c j")
+    (setq org-journal-prefix-key "C-c j")
   :config
-  (setq org-journal-dir "~/.writing/journal/"
-        org-journal-date-format "%d %B %Y"
-        ;; This makes incomplete TODOs carry over to the next day's entry
-        org-journal-carryover-items "TODO=\"TODO\"|TODO=\"NEXT\""
-        ;; Where new TODOs will be stored for the agenda
-        org-agenda-files '("~/.writing/agenda"))
-  
-  ;; Automatically copy carried-over TODOs into agenda file
-  (add-hook 'org-journal-after-entry-create-hook
-            (lambda ()
-              (save-excursion
-                (goto-char (point-min))
-                (while (re-search-forward org-journal-carryover-items nil t)
-                  (let ((element (org-element-at-point)))
-                    (when (eq (org-element-type element) 'headline)
-                      (org-copy-subtree)
-                      (with-current-buffer
-                          (find-file-noselect "~/.writing/agenda/tasks.org")
-                        (goto-char (point-max))
-                        (unless (bolp) (insert "\n"))
-                        (yank)
-				;; Schedule copied task for tomorrow
-				(org-schedule nil
-						  (format-time-string "%Y-%m-%d"
-									    (time-add (current-time) (days-to-time 1))))
-                        (save-buffer)))))))))
+    (setq org-journal-dir "~/.writing/journal/"
+          org-journal-date-format "%d %B %Y"))
 
 ;;; Keymappings
+
 (map! :leader
-      (:prefix ("j" . "journal")
+      (:prefix ("j" . "journal") ;; org-journal bindings
         :desc "Create new journal entry" "j" #'org-journal-new-entry
         :desc "Open previous entry" "p" #'org-journal-open-previous-entry
         :desc "Open next entry" "n" #'org-journal-open-next-entry
@@ -154,14 +130,14 @@
    "y" #'org-journal-search-calendar-year)
 
 ;;; Templates
+
 (defun org-journal-file-header-func (time)
   "Custom function to create journal header."
   (concat
-   (pcase org-journal-file-type
-     (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
-     (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-     (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
-     (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+    (pcase org-journal-file-type
+      (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+      (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+      (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+      (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
 
 (setq org-journal-file-header 'org-journal-file-header-func)
-
