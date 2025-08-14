@@ -260,53 +260,80 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; Org-super-agenda
+
+;; Detect tasks scheduled for tomorrow
+(defun my/org-scheduled-for-tomorrow-p ()
+  "Return t if the current headline is scheduled for tomorrow."
+  (let* ((sched (org-get-scheduled-time (point)))
+         (tomorrow (time-add (current-time) (days-to-time 1))))
+    (and sched
+         (= (time-to-days sched)
+            (time-to-days tomorrow)))))
+
+;; Return t if current headline has unfinished checkboxes
+(defun my/org-has-unfinished-checkboxes-p ()
+  "Return t if the current headline contains any unchecked checkboxes."
+  (org-element-map (org-element-at-point) 'item
+    (lambda (item)
+      (not (member "done" (org-element-property :tags item))))
+    nil t))
+
+;; Org-super-agenda setup
 
 (use-package org-super-agenda
   :after org-agenda
   :init
   (setq org-agenda-skip-scheduled-if-done t
-      org-agenda-skip-deadline-if-done t
-      org-agenda-include-deadlines t
-      org-agenda-block-separator nil
-      org-agenda-compact-blocks t
-      org-agenda-start-day nil ;; i.e. today
-      org-agenda-span 1
-      org-agenda-start-on-weekday nil)
+        org-agenda-skip-deadline-if-done t
+        org-agenda-include-deadlines t
+        org-agenda-block-separator nil
+        org-agenda-compact-blocks t
+        org-agenda-start-day nil
+        org-agenda-span 1
+        org-agenda-start-on-weekday nil
+        org-agenda-show-inherited-todo t
+        org-agenda-entry-types '(:headline :todo :checkbox))
+
   (setq org-agenda-custom-commands
         '(("c" "Super view"
-           ((agenda "" ((org-agenda-overriding-header "")
-                        (org-super-agenda-groups
-                         '((:name "Today"
-                                  :time-grid t
-                                  :date today
-                                  :order 1)))))
-            (alltodo "" ((org-agenda-overriding-header "")
-                         (org-super-agenda-groups
-                          '((:log t)
-                            (:name "To refile"
-                                   :file-path "refile\\.org")
-                            (:name "Next to do"
-                                   :todo "NEXT"
-                                   :order 1)
-                            (:name "Important"
-                                   :priority "A"
-                                   :order 6)
-                            (:name "Today's tasks"
-                                   :file-path "journal/")
-                            (:name "Due Today"
-                                   :deadline today
-                                   :order 2)
-                            (:name "Scheduled Soon"
-                                   :scheduled future
-                                   :order 8)
-                            (:name "Overdue"
-                                   :deadline past
-                                   :order 7)
-                            (:name "Meetings"
-                                   :and (:todo "MEET" :scheduled future)
-                                   :order 10)
-                            (:discard (:not (:todo "TODO")))))))))))
+           ((agenda ""
+                    ((org-agenda-overriding-header "")
+                     (org-super-agenda-groups
+                      '((:name "Today"
+                               :time-grid t
+                               :date today
+                               :order 1)))))
+            (alltodo ""
+                     ((org-agenda-overriding-header "")
+                      (org-super-agenda-groups
+                       `((:name "Next Day Planning"
+                                :file-path "agenda/tasks\\.org"
+                                :scheduled my/org-scheduled-for-tomorrow-p
+                                :order 0)
+                         (:name "Today's tasks"
+                                :todo "TODO"
+                                :order 1)
+                         (:name "To refile"
+                                :file-path "refile\\.org")
+                         (:name "Next to do"
+                                :todo "NEXT"
+                                :order 2)
+                         (:name "Important"
+                                :priority "A"
+                                :order 3)
+                         (:name "Due Today"
+                                :deadline today
+                                :order 4)
+                         (:name "Scheduled Soon"
+                                :scheduled future
+                                :order 5)
+                         (:name "Overdue"
+                                :deadline past
+                                :order 6)
+                         (:name "Meetings"
+                                :and (:todo "MEET" :scheduled future)
+                                :order 7)
+                         (:discard (:not (:todo "TODO" :or (:checkbox my/org-has-unfinished-checkboxes-p))))))))))))
   :config
   (org-super-agenda-mode))
 

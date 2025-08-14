@@ -96,6 +96,7 @@
         org-roam-ui-open-on-start t))
 
 
+
 ;; Org-journal settings
 
 (use-package! org-journal
@@ -106,62 +107,84 @@
   :config
   (setq org-journal-dir "~/.writing/journal/"
         org-journal-date-format "%d %B %Y"
-        ;; This makes incomplete TODOs carry over to the next day's entry
         org-journal-carryover-items "TODO=\"TODO\"|TODO=\"NEXT\""
-        ;; Where new TODOs will be stored for the agenda
-        org-agenda-files '("~/.writing/agenda"))
-  
-  ;; Automatically copy carried-over TODOs into agenda file
-  (add-hook 'org-journal-after-entry-create-hook
-            (lambda ()
-              (save-excursion
-                (goto-char (point-min))
-                (while (re-search-forward org-journal-carryover-items nil t)
-                  (let ((element (org-element-at-point)))
-                    (when (eq (org-element-type element) 'headline)
-                      (org-copy-subtree)
-                      (with-current-buffer
-                          (find-file-noselect "~/.writing/agenda/tasks.org")
+        org-agenda-files '("~/.writing/agenda")
+        org-journal-find-file 'find-file)
+
+  ;;; Ensure agenda directory exists
+  (unless (file-exists-p "~/.writing/agenda")
+    (make-directory "~/.writing/agenda" t))
+
+  ;;; -----------------------------
+  ;;; Function: copy H4 TODOs to agenda
+  ;;; -----------------------------
+
+  (defun my/org-journal-copy-todos-to-agenda ()
+    "Copy unfinished H4 TODOs from the current journal file to the agenda file, avoiding duplicates.
+Only runs if visiting a journal file."
+    (interactive)
+    (when (and buffer-file-name
+               (string-prefix-p (expand-file-name "~/.writing/journal/") buffer-file-name))
+      (let ((agenda-file "~/.writing/agenda/tasks.org"))
+        ;;; Ensure agenda file exists
+        (unless (file-exists-p agenda-file)
+          (with-temp-buffer
+            (write-file agenda-file)))
+        ;;; Parse the current buffer headlines
+        (org-element-map (org-element-parse-buffer 'headline) 'headline
+          (lambda (hl)
+            (let ((level (org-element-property :level hl))
+                  (todo (org-element-property :todo-keyword hl))
+                  (state (org-element-property :todo-state hl))
+                  (title (org-element-property :raw-value hl)))
+              ;;; Only H4 TODO/NEXT, not DONE
+              (when (and (= level 4)
+                         (member todo '("TODO" "NEXT"))
+                         (not (string= state "DONE")))
+                ;;; Copy the headline and children
+                (let ((begin (org-element-property :begin hl))
+                      (end (org-element-property :end hl)))
+                  (let ((content (buffer-substring-no-properties begin end)))
+                    (with-current-buffer (find-file-noselect agenda-file)
+                      ;;; Avoid duplicates by checking title
+                      (unless (save-excursion
+                                (goto-char (point-min))
+                                (re-search-forward (concat "^\\*+ " (regexp-quote title) "$") nil t))
                         (goto-char (point-max))
                         (unless (bolp) (insert "\n"))
-                        (yank)
-				;; Schedule copied task for tomorrow
-				(org-schedule nil
-						  (format-time-string "%Y-%m-%d"
-									    (time-add (current-time) (days-to-time 1))))
-                        (save-buffer)))))))))
+                        (insert content "\n")
+                        ;;; Schedule for tomorrow
+                        (org-schedule nil
+                                      (format-time-string "%Y-%m-%d"
+                                                          (time-add (current-time) (days-to-time 1))))
+                        ;;; Add CREATED property if missing
+                        (org-entry-put (point) "CREATED"
+                                       (or (org-entry-get (point) "CREATED")
+                                           (format-time-string "[%Y-%m-%d %a]")))
+                        (save-buffer))))))))))))
 
-;;; Keymappings
-(map! :leader
-      (:prefix ("j" . "journal")
-        :desc "Create new journal entry" "j" #'org-journal-new-entry
-        :desc "Open previous entry" "p" #'org-journal-open-previous-entry
-        :desc "Open next entry" "n" #'org-journal-open-next-entry
-        :desc "Search journal" "s" #'org-journal-search-forever))
+  ;;; Attach hook safely after function exists
+  (add-hook 'after-save-hook #'my/org-journal-copy-todos-to-agenda)
 
-(map!
- (:map calendar-mode-map
-   :n "o" #'org-journal-display-entry
-   :n "p" #'org-journal-previous-entry
-   :n "n" #'org-journal-next-entry
-   :n "O" #'org-journal-new-date-entry))
+  ;;; Remove scheduled date when marking DONE
+  (defun my/org-remove-schedule-if-done ()
+    "Remove scheduled date when a task is marked DONE."
+    (when (and (org-entry-is-done-p)
+               (org-get-scheduled-time (point)))
+      (org-schedule nil "")))
+  (add-hook 'org-after-todo-state-change-hook #'my/org-remove-schedule-if-done)
 
-(map!
- :map (calendar-mode-map)
- :localleader
-   "w" #'org-journal-search-calendar-week
-   "m" #'org-journal-search-calendar-month
-   "y" #'org-journal-search-calendar-year)
+  ;;; -----------------------------
+  ;;; Journal file header
+  ;;; -----------------------------
 
-;;; Templates
-(defun org-journal-file-header-func (time)
-  "Custom function to create journal header."
-  (concat
-   (pcase org-journal-file-type
-     (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
-     (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-     (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
-     (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
-
-(setq org-journal-file-header 'org-journal-file-header-func)
+  (defun org-journal-file-header-func (time)
+    "Custom function to create journal header."
+    (concat
+     (pcase org-journal-file-type
+       (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+       (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+       (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+       (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+  (setq org-journal-file-header 'org-journal-file-header-func))
 
