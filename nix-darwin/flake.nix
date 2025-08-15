@@ -64,11 +64,15 @@
 	    "gpg"
 	    "enchant"
 	    "nnn"
+	    "btop"
+	    "kew"
+	    "newsboat"
 	  ];
 	  casks = [
 	    "alacritty"
 	    "cursor"
 	    "emacs-app"
+	    "ghostty"
 	    "whisky"
 	    "heroic"
 	    "basictex"
