@@ -63,6 +63,7 @@
 	    "isync"
 	    "gpg"
 	    "enchant"
+	    "nnn"
 	  ];
 	  casks = [
 	    "alacritty"
@@ -76,7 +77,7 @@
 	    "signal"
 	    "localsend"
 	    "onlyoffice"
-	    "telegram"
+	    "qutebrowser"
 	    "utm"
 	    "xld"
 	    "zen"
