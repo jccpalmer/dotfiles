@@ -67,6 +67,7 @@
 	    "btop"
 	    "kew"
 	    "newsboat"
+	    "lynx"
 	  ];
 	  casks = [
 	    "alacritty"
@@ -81,7 +82,6 @@
 	    "signal"
 	    "localsend"
 	    "onlyoffice"
-	    "qutebrowser"
 	    "utm"
 	    "xld"
 	    "zen"
