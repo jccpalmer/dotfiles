@@ -53,7 +53,6 @@
 	    "sketchybar"
 	    "node"
 	    "libvirt"
-	    "virt-manager"
           "ollama"
 	    "gsettings-desktop-schemas"
 	    "sass/sass/sass"
@@ -70,14 +69,12 @@
 	    "lynx"
 	  ];
 	  casks = [
-	    "alacritty"
 	    "cursor"
 	    "emacs-app"
 	    "ghostty"
 	    "whisky"
 	    "heroic"
 	    "basictex"
-	    "keepassxc"
 	    "joplin"
 	    "signal"
 	    "localsend"
