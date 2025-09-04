@@ -72,6 +72,7 @@
 	    "cursor"
 	    "emacs-app"
 	    "ghostty"
+            "kindle-comic-converter"
 	    "whisky"
 	    "heroic"
 	    "basictex"
