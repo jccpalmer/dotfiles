@@ -78,6 +78,7 @@
 	    "joplin"
 	    "localsend"
 	    "onlyoffice"
+	    "thorium"
 	    "utm"
 	    "xld"
 	    "zen"
