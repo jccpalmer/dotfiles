@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Blockquote with author
+# key: bq
+# --
+#+BEGIN_QUOTE
+${1:Your quote here}
+#+ATTR_AUTHOR: — ${2:Author name}
+#+END_QUOTE

@@ -13,6 +13,30 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; -----------------------------
+;; YASnippet settings
+;; -----------------------------
+
+(after! yasnippet
+  (add-to-list 'yas-snippet-dirs "~/.config/doom/snippets")
+  (yas-reload-all))
+
+;; -----------------------------
+;; Org-mode settings
+;; -----------------------------
+
+;;; Templates
+
+;;;; Blockquote with author attribution
+(after! org
+  (add-to-list 'org-structure-template-alist
+               '("bq" . (lambda ()
+                          (interactive)
+                          (yas-expand-snippet
+                           (with-temp-buffer
+                             (insert-file-contents "~/.config/doom/snippets/org-mode/writing/bq")
+                             (buffer-string)))))))
+
+;; -----------------------------
 ;; Citar configuration
 ;; -----------------------------
 
