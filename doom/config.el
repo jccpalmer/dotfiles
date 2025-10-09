@@ -162,6 +162,20 @@
   (setq org-journal-file-header 'org-journal-file-header-func))
 
 ;; -----------------------------
+;; YASnippet in Org-journal
+;; -----------------------------
+
+(after! org-journal
+        (add-hook 'org-journal-mode-hook #'yas-minor-mode-on)
+
+        (with-eval-after-load 'yasnippet
+          (add-to-list 'yas-snippet-dirs "~/.config/doom/snippets/")
+          (yas-reload-all)
+          (add-hook 'org-journal-mode-hook
+                    (lambda ()
+                      (yas-activate-extra-mode 'org-mode)))))
+
+;; -----------------------------
 ;; Org-super-agenda
 ;; -----------------------------
 
@@ -257,6 +271,64 @@
                              entry))))))))))
   :config
   (org-super-agenda-mode))
+
+;; -----------------------------
+;; Vterm settings
+;; -----------------------------
+
+(add-to-list 'display-buffer-alist
+             '("\\*vterm.*\\*"
+               (display-buffer-reuse-window display-buffer-in-side-window)
+               (side . right)
+               (slot . 0)
+               (window-width . 0.5)
+               (window-parameters . ((no-other-window . t)
+                                     (no-delete-other-windows . t)))))
+
+(defun my/vterm-right-single ()
+  "Open or reuse a vterm buffer in a right-side vertical split, preventing bottom split."
+  (interactive)
+  (let ((right-win (or (window-in-direction 'right)
+                       (split-window-right))))
+    (select-window right-win)
+    (let ((buf (or (get-buffer "*vterm*")
+                   (generate-new-buffer "*vterm*"))))
+      (set-window-buffer right-win buf)
+      ;; Enable vterm-mode if not already active
+      (unless (derived-mode-p 'vterm-mode)
+        (with-current-buffer buf
+          (vterm-mode)))
+      (select-window right-win))))
+
+(defun my/vterm-right-new ()
+  "Create a new vterm buffer in a right-side vertical split, preventing bottom split."
+  (interactive)
+  (let ((right-win (or (window-in-direction 'right)
+                       (split-window-right))))
+    (select-window right-win)
+    (let ((buf (generate-new-buffer "vterm")))
+      (set-window-buffer right-win buf)
+      (with-current-buffer buf
+        (vterm-mode))
+      (select-window right-win))))
+
+(after! evil
+  (map! :leader
+        :n
+        :desc "Vterm right single (reuse)"
+        "t '" #'my/vterm-right-single
+        :desc "Vterm right new (always new)"
+        "t V" #'my/vterm-right-new))
+
+(defun my/vterm-cleanup-on-kill ()
+  "Kill the underlying vterm process only if Emacs is not quitting."
+  (unless (bound-and-true-p noninteractive)
+    (when (derived-mode-p 'vterm-mode)
+      (let ((proc (get-buffer-process (current-buffer))))
+        (when (and proc (process-live-p proc))
+          (kill-process proc))))))
+
+(add-hook 'kill-buffer-hook #'my/vterm-cleanup-on-kill)
 
 ;; Enable debug for errors
 (setq debug-on-error t)

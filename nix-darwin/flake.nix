@@ -46,7 +46,8 @@
 	homebrew = {
 	  enable = true;
 	  brews = [
-	    "mas"
+	    "cmake"
+      "mas"
 	    "pandoc"
 	    "hugo"
 	    "qemu"
