@@ -68,6 +68,8 @@
 	    "newsboat"
 	    "lynx"
 	    "opencode"
+      "mpd"
+      "mpc"
 	  ];
 	  casks = [
 	    "cursor"
