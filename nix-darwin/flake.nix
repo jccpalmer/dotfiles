@@ -84,7 +84,6 @@
 	    "thorium"
 	    "utm"
 	    "xld"
-	    "zen"
 	    "font-meslo-lg-nerd-font"
 	    "nikitabobko/tap/aerospace"
 	  ];
