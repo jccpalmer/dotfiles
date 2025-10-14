@@ -25,7 +25,6 @@ module.exports = async (tp) => {
     }
   }
 
-  // Coordinates for Chantilly, VA
   const lat = process.env.lat;
   const lon = process.env.lon;
   const fallbackCity = process.env.fallbackCity;
