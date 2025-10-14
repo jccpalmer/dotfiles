@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 const { execSync } = window.require("child_process");
 
 const runShell = (cmd) => execSync(cmd, { encoding: "utf-8" }).trim();
 
 module.exports = async (tp) => {
-  const API_KEY = "23d9bf38f251c40198c1d43772451971";
+  const API_KEY = process.env.API_KEY;
   const cachePath = "weather-cache.md";
   const today = new Date().toISOString().slice(0, 10);
 
