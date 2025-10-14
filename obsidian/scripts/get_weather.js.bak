@@ -1,0 +1,77 @@
+const { execSync } = window.require("child_process");
+
+const runShell = (cmd) => execSync(cmd, { encoding: "utf-8" }).trim();
+
+module.exports = async (tp) => {
+  const API_KEY = "23d9bf38f251c40198c1d43772451971";
+  const cachePath = "weather-cache.md";
+  const today = new Date().toISOString().slice(0, 10);
+
+  const cacheFile = app.vault.getAbstractFileByPath(cachePath);
+
+  // Try reading the cache
+  if (cacheFile) {
+    const fm = app.metadataCache.getCache(cachePath)?.frontmatter;
+    if (fm && fm.date === today) {
+      return `Weather: ${fm.description}, ${fm.temp}°F in ${fm.city}`;
+    }
+  }
+
+  // Fetch IP-based location
+  let ipGeoRaw = runShell(`curl -s "http://ip-api.com/json"`);
+  if (!ipGeoRaw) return "⚠️ Failed to get IP location";
+
+  let ipGeo;
+  try {
+    ipGeo = JSON.parse(ipGeoRaw);
+  } catch (e) {
+    return "⚠️ Failed to parse IP location JSON";
+  }
+
+  let { lat, lon } = ipGeo;
+  if (!lat || !lon) return "⚠️ Invalid coordinates from IP location";
+
+  // Reverse geocode to get city name
+  let geoRaw = runShell(`curl -s "https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}"`);
+  if (!geoRaw) return "⚠️ Failed to reverse geocode";
+
+  let geo;
+  try {
+    geo = JSON.parse(geoRaw);
+  } catch (e) {
+    return "⚠️ Failed to parse reverse geocode JSON";
+  }
+
+  let city = geo[0]?.name ?? "Unknown";
+
+  // Get weather info
+  let weatherRaw = runShell(`curl -s "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial"`);
+  if (!weatherRaw) return "⚠️ Failed to fetch weather data";
+
+  let weather;
+  try {
+    weather = JSON.parse(weatherRaw);
+  } catch (e) {
+    return "⚠️ Failed to parse weather JSON";
+  }
+
+  let temp = weather.main?.temp ?? "N/A";
+  let description = weather.weather?.[0]?.description ?? "unknown conditions";
+
+  // Cache the new weather info
+  const cacheContent = `---
+date: ${today}
+city: ${city}
+description: ${description}
+temp: ${temp}
+units: imperial
+---`;
+
+  if (cacheFile) {
+    await app.vault.modify(cacheFile, cacheContent);
+  } else {
+    await app.vault.create(cachePath, cacheContent);
+  }
+
+  return `Weather: ${description}, ${temp}°F in ${city}`;
+};

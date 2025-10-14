@@ -1,0 +1,1 @@
+<< [[Journal/<% tp.date.now("YYYY", -1) %>/<% tp.date.now("MM - MMMM", -1) %>/<% tp.date.now("DD MMMM YYYY", -1) %>|Yesterday]] | [[Journal/<% tp.date.now("YYYY", 1) %>/<% tp.date.now("MM - MMMM", 1) %>/<% tp.date.now("DD MMMM YYYY", 1) %>|Tomorrow]] >>
