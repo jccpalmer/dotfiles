@@ -133,6 +133,7 @@ libinput-gestures.conf
 mimeapps.list
 ml4w
 nwg-dock-hyprland
+obsidian/scripts/.env
 ohmyposh
 plasma-localerc
 plasma-org.kde.plasma.desktop-appletsrc
