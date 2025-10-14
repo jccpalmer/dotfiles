@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { execSync } = window.require("child_process");
 
 const runShell = (cmd) => {
@@ -9,7 +11,7 @@ const runShell = (cmd) => {
 };
 
 module.exports = async (tp) => {
-  const API_KEY = "23d9bf38f251c40198c1d43772451971";
+  const API_KEY = process.env.API_KEY;
   const cachePath = "weather-cache.md";
   const today = new Date().toISOString().slice(0, 10);
 
@@ -24,9 +26,9 @@ module.exports = async (tp) => {
   }
 
   // Coordinates for Chantilly, VA
-  const lat = "38.8943";
-  const lon = "-77.4311";
-  const fallbackCity = "Chantilly";
+  const lat = process.env.lat;
+  const lon = process.env.lon;
+  const fallbackCity = process.env.fallbackCity;
 
   // Fetch weather data
   const weatherRaw = runShell(`curl -s "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial"`);
