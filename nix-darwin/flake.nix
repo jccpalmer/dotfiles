@@ -98,7 +98,7 @@
 
 	# Fonts
 	fonts.packages = [
-        pkgs.jetbrains-mono
+    pkgs.jetbrains-mono
 	  pkgs.meslo-lg
 	];
 
@@ -125,7 +125,7 @@
 
       # Configure macOS system settings with Nix.
 	system.defaults = {
-        dock.autohide = false;
+    dock.autohide = true;
 	  finder.FXPreferredViewStyle = "clmv";
 	  NSGlobalDomain.AppleInterfaceStyle = "Dark";
 	  loginwindow.GuestEnabled = false;
@@ -164,9 +164,9 @@
 	  {
 	    nix-homebrew = {
 	      enable = true;
-		enableRosetta = true;
-		user = "Jordan";
-		autoMigrate = true;
+		    enableRosetta = true;
+		    user = "Jordan";
+		    autoMigrate = true;
 	    };
 	  }
 	];
