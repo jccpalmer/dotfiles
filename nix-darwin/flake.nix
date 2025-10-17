@@ -48,6 +48,7 @@
 	  brews = [
 	    "cmake"
       "mas"
+      "git-crypt"
 	    "pandoc"
 	    "hugo"
 	    "qemu"
