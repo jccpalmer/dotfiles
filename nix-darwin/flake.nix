@@ -48,7 +48,7 @@
 	  brews = [
 	    "cmake"
       "mas"
-      "git-crypt"
+      "pinentry-mac"
 	    "pandoc"
 	    "hugo"
 	    "qemu"

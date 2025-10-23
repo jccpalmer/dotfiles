@@ -8,9 +8,24 @@
 (setq doom-theme 'doom-one
       display-line-numbers-type t
       org-directory "~/.writing/"
-	org-default-notes-file (concat org-directory "notes/inbox.org"))
+      org-default-notes-file (concat org-directory "notes/inbox.org")
+      default-directory "~/.writing"
+      org-agenda-files
+        (directory-files-recursively
+        (expand-file-name "agenda" org-directory) "\\.org$")
+      )
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; -----------------------------
+;; EasyPG settings
+;; -----------------------------
+
+(require 'epa-file)
+(epa-file-enable)
+(setq epa-file-select-keys nil)
+(setq epa-file-encrypt-to '("me@jccpalmer.com"))
+(setq epg-pinentry-mode 'loopback)
 
 ;; -----------------------------
 ;; YASnippet settings
@@ -77,11 +92,36 @@
 
 (setq org-roam-capture-templates
       '(("d" "default" plain "%?"
-         :if-new
-         (file+head "${slug}.org"
-                    "#+title: ${title}\n#+date: %u\n#+lastmod: \n\n")
-         :immediate-finish t))
-      time-stamp-start "#\\+lastmod: [\t]*")
+         :if-new (file+head "${slug}.org"
+                            "#+title: ${title}\n#+date: %u\n#+lastmod: \n\n")
+         :immediate-finish t)
+        ("p" "Philosophy" plain "%?"
+         :if-new (file+head "philosophy/%<%Y%m%d%H%M%S>-${slug}.org"
+                            "#+title: ${title}\n#+filetags: :philosophy:\n")
+         :unnarrowed t)
+        ("t" "Tech/IT" plain "%?"
+         :if-new (file+head "tech/%<%Y%m%d%H%M%S>-${slug}.org"
+                            "#+title: ${title}\n#+filetags: :tech:\n")
+         :unnarrowed t)))
+
+(setq time-stamp-start "#\\+lastmod:[\t]*")
+
+;;; Automatically update the timestamp upon save
+
+(setq time-stamp-active t
+      time-stamp-start "#\\+lastmod:[ \t]*"
+      time-stamp-end "$"
+      time-stamp-format "%Y-%m-%d %H:%M:%S"
+      time-stamp-line-limit 20)
+
+(defun my/org-roam-update-lastmod ()
+  "Update #+lastmod: timestamp when saving Org-roam notes."
+  (when (and (boundp 'org-roam-directory)
+             (string-prefix-p (expand-file-name org-roam-directory)
+                              (buffer-file-name)))
+    (time-stamp)))
+
+(add-hook 'before-save-hook #'my/org-roam-update-lastmod)
 
 ;; -----------------------------
 ;; Org-journal
@@ -95,6 +135,7 @@
   :config
   (setq org-journal-dir "~/.writing/journal/"
         org-journal-date-format "%d %B %Y"
+        org-journal-file-format "%Y%m%d.org.gpg"
         org-journal-carryover-items "TODO=\"TODO\"|TODO=\"NEXT\""
         org-agenda-files '("~/.writing/agenda")
         org-journal-find-file 'find-file)
@@ -166,14 +207,14 @@
 ;; -----------------------------
 
 (after! org-journal
-        (add-hook 'org-journal-mode-hook #'yas-minor-mode-on)
+  (add-hook 'org-journal-mode-hook #'yas-minor-mode-on)
 
-        (with-eval-after-load 'yasnippet
-          (add-to-list 'yas-snippet-dirs "~/.config/doom/snippets/")
-          (yas-reload-all)
-          (add-hook 'org-journal-mode-hook
-                    (lambda ()
-                      (yas-activate-extra-mode 'org-mode)))))
+  (with-eval-after-load 'yasnippet
+    (add-to-list 'yas-snippet-dirs "~/.config/doom/snippets/")
+    (yas-reload-all)
+    (add-hook 'org-journal-mode-hook
+              (lambda ()
+                (yas-activate-extra-mode 'org-mode)))))
 
 ;; -----------------------------
 ;; Org-super-agenda
@@ -228,39 +269,39 @@
                     ((org-agenda-overriding-header "")
                      (org-super-agenda-groups
                       '((:name "Today"
-                               :time-grid t
-                               :date today
-                               :order 1)))))
+                         :time-grid t
+                         :date today
+                         :order 1)))))
             (alltodo ""
                      ((org-agenda-overriding-header "")
                       (org-super-agenda-groups
                        `((:name "Next Day Planning"
-                                :file-path "agenda/tasks\\.org"
-                                :scheduled my/org-scheduled-for-tomorrow-p
-                                :order 0)
+                          :file-path "agenda/tasks\\.org"
+                          :scheduled my/org-scheduled-for-tomorrow-p
+                          :order 0)
                          (:name "Today's tasks"
-                                :todo "TODO"
-                                :order 1)
+                          :todo "TODO"
+                          :order 1)
                          (:name "To refile"
-                                :file-path "refile\\.org")
+                          :file-path "refile\\.org")
                          (:name "Next to do"
-                                :todo "NEXT"
-                                :order 2)
+                          :todo "NEXT"
+                          :order 2)
                          (:name "Important"
-                                :priority "A"
-                                :order 3)
+                          :priority "A"
+                          :order 3)
                          (:name "Due Today"
-                                :deadline today
-                                :order 4)
+                          :deadline today
+                          :order 4)
                          (:name "Scheduled Soon"
-                                :scheduled future
-                                :order 5)
+                          :scheduled future
+                          :order 5)
                          (:name "Overdue"
-                                :deadline past
-                                :order 6)
+                          :deadline past
+                          :order 6)
                          (:name "Meetings"
-                                :and (:todo "MEET" :scheduled future)
-                                :order 7)
+                          :and (:todo "MEET" :scheduled future)
+                          :order 7)
                          (:discard (:not (:todo "TODO" :or (:checkbox my/org-has-unfinished-checkboxes-p)))))
                        :children t
                        :display-function
